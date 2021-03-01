@@ -1,0 +1,41 @@
+.section
+    padding: 100px 0 120px
+    &__header
+        margin-bottom: 70px
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &-grey
+        background-color: #F7F6F4
+    &-white
+        background-color: #fff
+    &--border
+        position: relative
+        &:after
+            content: ''
+            position: absolute
+            bottom: 0px
+            border-bottom: 1px solid #E1DCD5
+            width: calc(100% - 330px - 70px - 90px)
+            left: 365px
+
+@media (max-width: $desktop)
+    .section
+        &--border
+            &:after
+                width: calc(100% - 220px - 70px - 70px)
+                left: 255px
+
+@media (max-width: $tablet)
+    .section
+        padding: 80px 0 100px
+        &__header
+            margin-bottom: 40px
+        &--border
+            &:after
+                width: calc(100% - 70px)
+                left: 35px
+
+@media (max-width: $mob)
+    .section
+        padding: 40px 0

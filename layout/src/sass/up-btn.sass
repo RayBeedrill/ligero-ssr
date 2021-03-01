@@ -1,0 +1,35 @@
+.up-btn
+    cursor: pointer
+    position: absolute
+    bottom: 40px
+    left: 50%
+    transform: translateX(-50%)
+    &__icon
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        background: #383838
+        box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.04)
+        transition: 0.3s
+        margin: 0 auto 10px
+        svg
+            fill: #C9C9C9
+            transition: 0.3s
+    &__text
+        font-size: 12px
+        line-height: 14px
+        text-transform: uppercase
+        letter-spacing: 0.1em
+        color: #787878
+        transition: 0.3s
+    &:hover
+        .up-btn
+            &__icon
+                background-color: $orange
+                svg
+                    fill: #333333
+            &__text
+                color: #fff

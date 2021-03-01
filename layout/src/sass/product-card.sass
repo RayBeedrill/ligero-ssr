@@ -1,0 +1,79 @@
+.product-card
+    display: block
+    // max-width: 290px
+    // margin: 0 auto
+    position: relative
+    &__img
+        height: 380px
+        margin-bottom: 20px
+        display: block
+        img
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__rate
+        margin-bottom: 10px
+    &__title
+        font-size: 15px
+        line-height: 150%   
+        color: #333333
+        letter-spacing: 0.1em
+        text-transform: uppercase
+        font-family: 'Museo Sans Cyrl 900'
+        display: block
+        margin-bottom: 8px
+    &__footer
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__price
+        font-size: 28px
+        line-height: 170%
+        font-family: 'Oswald'
+        color: $sub-black
+        font-weight: 500
+        span
+            font-size: 15px            
+            line-height: 170%
+            letter-spacing: 0.05em
+    &__buy-btn
+        position: relative
+        z-index: 1
+    &--hit
+        &:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 26px
+            height: 59px
+            background-image: url(../static/img/hit-label.svg)
+            background-repeat: no-repeat
+            background-position: center
+    &--new
+        &:after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 26px
+            height: 100px
+            background-image: url(../static/img/new-label.svg)
+            background-repeat: no-repeat
+            background-position: center
+            
+@media (max-width: 500px)
+    .product-card
+        &__img
+            height: auto
+        &__title
+            font-size: 13px
+        &__price
+            font-size: 24px
+            margin-bottom: 10px
+        &__footer
+            display: block
+            .btn
+                width: 100%
+                text-align: center

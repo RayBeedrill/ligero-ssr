@@ -1,0 +1,82 @@
+.delivery-section
+    &__block
+        margin-bottom: 70px
+        &:last-child
+            margin-bottom: 0
+        h2, h3, h4
+            margin-bottom: 30px
+        p
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 0
+        ul
+            margin-bottom: 30px
+            &:last-child
+                margin-bottom: 30px
+            li
+                padding-left: 20px
+                font-size: 17px
+                line-height: 170%
+                position: relative
+                margin-bottom: 6px
+                color: #333333
+                &:last-child
+                    margin-bottom: 0
+                &:before
+                    content: ''
+                    position: absolute
+                    top: 10px
+                    left: 0
+                    width: 8px
+                    height: 8px
+                    background-color: $orange
+                    border-radius: 50%
+        ol            
+            margin-bottom: 30px
+            counter-reset: my-awesome-counter
+            &:last-child
+                margin-bottom: 30px
+            li
+                counter-increment: my-awesome-counter
+                padding-left: 20px
+                font-size: 17px
+                line-height: 170%
+                position: relative
+                margin-bottom: 6px
+                color: #333333
+                &:last-child
+                    margin-bottom: 0
+                &:before
+                    content: counter(my-awesome-counter)
+                    position: absolute
+                    top: 0
+                    left: 0
+                    color: $orange
+
+@media (max-width: $desktop)
+    .delivery-section
+        &__block
+            p, ul, ol
+                margin-bottom: 20px
+
+            ul, ol
+                li
+                    font-size: 15px
+
+@media (max-width: $tablet) 
+    .delivery-section
+        &__block
+            margin-bottom: 40px
+
+@media (max-width: $mob)
+    .delivery-section
+        &__block
+            margin-bottom: 20px
+            h2, h3, h4
+                margin-bottom: 10px
+            p
+                margin-bottom: 10px
+            ul, ol
+                margin-bottom: 10px
+                li
+                    font-size: 14px

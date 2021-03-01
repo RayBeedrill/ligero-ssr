@@ -1,0 +1,110 @@
+.form
+    &__field
+        position: relative
+        .select2-container--default
+            .select2-selection--single
+                border: none			
+                height: 60px
+                background: #F7F6F4
+                border-radius: 35px
+                display: flex
+                align-items: center
+                border: 1px solid #E1DCD5
+                transition: 0.3s
+                &:focus
+                    outline: none
+                    border: 1px solid rgba(0,0,0,0.2)					
+                &:hover
+                    border: 1px solid rgba(0,0,0,0.2)					
+                .select2-selection__rendered
+                    height: 100%
+                    font-size: 15px
+                    line-height: 58px
+                    color: #333
+                    padding-right: 30px
+                    padding-left: 30px
+                    .select2-selection__placeholder
+                        color: #999999
+                .select2-selection__arrow
+                    right: 30px
+                    border-radius: 50%
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 22px
+                    height: 22px
+                    background-color: #fff
+                    background-image: url(../static/img/chevron-down-grey.svg)
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size: 14px 14px
+                    b
+                        display: none 
+            &.select2-container--open
+                .select2-selection--single
+                    background-color: #fff
+                    border: 1px solid rgba(0,0,0,0.2)					
+            &.select2-container--open.select2-container--below .select2-selection--single
+                border-bottom-left-radius: 4px
+                border-bottom-right-radius: 4px
+    &__field-input
+        background: #F7F6F4
+        border: 1px solid #E1DCD5
+        height: 60px
+        line-height: 58px
+        border-radius: 35px
+        font-family: 'Museo Sans Cyrl 500'
+        width: 100%
+        padding: 0 30px
+        color: $black
+        font-size: 15px
+        transition: 0.3s
+        &::placeholder
+            color: #999999
+            transition: 0.3s
+        &:hover
+            border: 1px solid rgba(0,0,0,0.2)
+        &:focus
+            outline: none
+            background-color: #fff
+            &::placeholder   
+                color: $black
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration
+            -webkit-appearance: none
+    &__field-icon
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 25px
+        svg
+            fill: #999
+            transition: 0.3s
+    &__field-textarea
+        height: 120px
+        padding: 20px 30px
+        background: #F7F6F4
+        border: 1px solid #E1DCD5
+        border-radius: 35px
+        font-family: 'Museo Sans Cyrl 500'
+        width: 100%
+        font-size: 15px
+        line-height: 18px
+        resize: none
+        &::placeholder
+            color: #999999
+            transition: 0.3s
+        &:hover
+            border: 1px solid rgba(0,0,0,0.2)
+        &:focus
+            outline: none
+            background-color: #fff
+            &::placeholder   
+                color: $black
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration
+            -webkit-appearance: none
+    

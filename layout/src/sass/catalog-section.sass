@@ -1,0 +1,27 @@
+.catalog-section
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin: 0 -17.5px
+        border-bottom: 1px solid #E1DCD5
+        margin-bottom: 30px
+    &__list-item
+        width: calc(100% / 4)
+        padding: 0 17.5px
+        margin-bottom: 100px
+
+@media (max-width: $desktop)
+    .catalog-section
+        &__list-item
+            width: calc(100% / 3)
+            margin-bottom: 70px
+
+@media (max-width: $mob)
+    .catalog-section
+        &__list
+            margin-left: -10px
+            margin-right: -10px
+        &__list-item
+            width: calc(100% / 2)
+            margin-bottom: 35px
+            padding: 0 10px

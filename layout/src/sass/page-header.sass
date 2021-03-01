@@ -1,0 +1,32 @@
+.page-header
+    margin-bottom: -40px
+    position: relative
+    z-index: 1
+    &__top
+        padding: 30px 0
+        border-bottom: 1px solid #E1DCD5
+    .breadcrumbs
+        margin-top: 20px
+    &--white
+        background-color: #fff
+    &--filter
+        .page-header
+            &__top
+                display: flex
+                align-items: center
+                justify-content: space-between
+
+@media (max-width: $tablet)
+    .page-header
+        &--filter
+            .page-header__top
+                padding-top: 10px
+
+@media (max-width: $mob)
+    .page-header
+        margin-bottom: 0px
+        &__top
+            padding-bottom: 10px
+            padding-top: 20px
+        .breadcrumbs
+            margin-top: 10px

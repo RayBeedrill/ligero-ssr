@@ -1,0 +1,80 @@
+.products-slider
+    .slick-list
+        margin: 0 -17.5px
+    .slick-slide
+        padding: 0 17.5px
+    &__arr-next
+        position: absolute
+        top: -113px
+        right: 160px
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        background: #ECECEC
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: 0.3s
+        z-index: 1
+        svg
+            stroke: #999
+        &:hover
+            background-color: $orange
+            svg
+                stroke: #333
+    &__arr-prev
+        position: absolute
+        top: -113px
+        right: 206px
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        background: #ECECEC
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: 0.3s
+        z-index: 1
+        svg
+            stroke: #999
+            transition: 0.3s
+        &:hover
+            background-color: $orange
+            svg
+                stroke: #333
+
+@media (max-width: $tablet)
+    .products-slider
+        &__arr-prev
+            top: -80px
+        &__arr-next
+            top: -80px
+
+@media (max-width: $mob)
+    .products-slider
+        margin-bottom: 76px
+        &__item
+            .product-card
+                width: 270px
+        &__arr-prev
+            top: calc(100% + 40px)
+            right: auto
+            left: calc(50% - 36px)
+            transform: translateX(-50%)
+        &__arr-next
+            top: calc(100% + 40px)
+            right: auto
+            left: calc(50% + 36px)
+            transform: translateX(-50%)
+
+@media (max-width: 500px)
+    .products-slider
+        .slick-list
+            margin: 0 -10px
+        .slick-slide
+            padding: 0 10px
+        &__item
+            .product-card
+                width: 160px

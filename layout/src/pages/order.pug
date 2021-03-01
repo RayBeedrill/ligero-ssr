@@ -1,0 +1,159 @@
+extends _includes/layout
+
+block vars
+  -pageId = 'index'
+
+block content
+  include _includes/sidebar
+  include _includes/bar
+  +sidebar
+  +bar
+        
+  main.main
+    .page-header.page-header--white
+      .container 
+        .container-inner
+          .page-header__top
+            h1.page-header__title.h2 Оформление закака
+          ul.breadcrumbs 
+            li.breadcrumbs__item 
+              a.breadcrumbs__item-link(href="") Главная
+            li.breadcrumbs__item 
+              a.breadcrumbs__item-link(href="") Оформление заказа
+
+    .order.section.section-white
+      .container 
+        .container-inner 
+          .order__row 
+            .order__col
+              .order__block 
+                .order__block-header 
+                  .order__block-number 1
+                  .order__block-content
+                    .order__block-title Ваши данные
+                .order__block-row 
+                  .order__block-col-50
+                    .form__field 
+                      input.form__field-input(type="text" placeholder="Имя*" required)
+                  .order__block-col-50
+                    .form__field 
+                      input.form__field-input(type="text" placeholder="Фамилия*" required)
+                  .order__block-col-50
+                    .form__field 
+                      input.form__field-input(type="tel" placeholder="Телефон*" required)
+                  .order__block-col-50
+                    .form__field 
+                      input.form__field-input(type="email" placeholder="E-mail*" required)
+              .order__block 
+                .order__block-header 
+                  .order__block-number 2
+                  .order__block-content
+                    .order__block-title Доставка Новой Почтой
+                .order__block-row 
+                  .order__block-col-100 
+                    .form__field 
+                        select(name="" data-placeholder="Тип доставки").form__field-select
+                          option(value="Тип доставки" hidden) Тип доставки 
+                  .order__block-col-100 
+                    .form__field 
+                        select(name="" data-placeholder="Город").form__field-select
+                          option(value="Город" hidden) Город
+                  .order__block-col-100 
+                    .form__field 
+                        select(name="" data-placeholder="Отделение").form__field-select
+                          option(value="Отделение" hidden) Отделение
+              .order__block 
+                .order__block-header 
+                  .order__block-number 3
+                  .order__block-content
+                    .order__block-title Комментарий к заказу
+                    .order__block-text можете написать уточнение к заказу. Например, чтобы заказ выслали не сразу
+                .order__block-row
+                  .order__block-col-100 
+                    .form__field 
+                      textarea.form__field-textarea(placeholder="Ваш текст (необязательно)")
+              .order__block 
+                .order__block-header
+                  .order__block-number 4
+                  .order__block-content
+                    .order__block-title К оплате: 16 700 грн
+                    .order__block-text стоимость указана без доставки
+
+                  a.btn.btn--xl(href="") я Подтверждаю заказ
+            .order__col
+              .order__info-block 
+                .order__info-block-title По всем вопросам звоните:
+                ul.order__info-block-list 
+                  li.order__info-block-list-item 
+                    a.order__info-block-list-link(href="") 
+                      svg(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M2.41667 5.19667C3.37667 7.08333 4.92 8.62667 6.81 9.58667L8.27667 8.11667C8.46 7.93333 8.72333 7.88 8.95333 7.95333C9.7 8.2 10.5033 8.33333 11.3333 8.33333C11.7033 8.33333 12 8.63 12 9V11.3333C12 11.7033 11.7033 12 11.3333 12C5.07333 12 0 6.92667 0 0.666667C0 0.296667 0.3 0 0.666667 0H3C3.37 0 3.66667 0.296667 3.66667 0.666667C3.66667 1.49667 3.8 2.3 4.04667 3.04667C4.12 3.27667 4.06667 3.54 3.88333 3.72333L2.41667 5.19667Z')
+                      | +38 063 846 20 10
+                  li.order__info-block-list-item 
+                    a.order__info-block-list-link(href="") 
+                      svg(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                        path(d='M2.41667 5.19667C3.37667 7.08333 4.92 8.62667 6.81 9.58667L8.27667 8.11667C8.46 7.93333 8.72333 7.88 8.95333 7.95333C9.7 8.2 10.5033 8.33333 11.3333 8.33333C11.7033 8.33333 12 8.63 12 9V11.3333C12 11.7033 11.7033 12 11.3333 12C5.07333 12 0 6.92667 0 0.666667C0 0.296667 0.3 0 0.666667 0H3C3.37 0 3.66667 0.296667 3.66667 0.666667C3.66667 1.49667 3.8 2.3 4.04667 3.04667C4.12 3.27667 4.06667 3.54 3.88333 3.72333L2.41667 5.19667Z')
+                      | +38 063 846 20 10
+              .cart-list
+                .cart-list__item
+                  .cart-list__item-img 
+                    img(src="static/img/product-img-1.jpg", alt="")
+                  .cart-list__item-content 
+                    .cart-list__item-title Уголь Oasis Premium Coalus 25мм
+                    .cart-list__item-amount
+                      .cart-list__item-amount-btn-sub
+                        svg(width='12' height='2' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='1' x2='12' y2='1' stroke-width='2')
+                      input.cart-list__item-amount-input(type="number" value="1")
+                      .cart-list__item-amount-btn-add
+                        svg(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='6' x2='12' y2='6' stroke-width='2')
+                          line(x1='6' x2='6' y2='12' stroke-width='2')
+                    .cart-list__item-price 15 900 грн
+                  .cart-list__item-delete-btn 
+                    svg(width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(y='15.5562' width='22' height='2' rx='1' transform='rotate(-45 0 15.5562)')
+                      rect(x='1.41406' width='22' height='2' rx='1' transform='rotate(45 1.41406 0)')
+                .cart-list__item
+                  .cart-list__item-img 
+                    img(src="static/img/product-img-1.jpg", alt="")
+                  .cart-list__item-content 
+                    .cart-list__item-title Уголь Oasis Premium Coalus 25мм
+                    .cart-list__item-amount
+                      .cart-list__item-amount-btn-sub
+                        svg(width='12' height='2' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='1' x2='12' y2='1' stroke-width='2')
+                      input.cart-list__item-amount-input(type="number" value="1")
+                      .cart-list__item-amount-btn-add
+                        svg(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='6' x2='12' y2='6' stroke-width='2')
+                          line(x1='6' x2='6' y2='12' stroke-width='2')
+                    .cart-list__item-price 15 900 грн
+                  .cart-list__item-delete-btn 
+                    svg(width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(y='15.5562' width='22' height='2' rx='1' transform='rotate(-45 0 15.5562)')
+                      rect(x='1.41406' width='22' height='2' rx='1' transform='rotate(45 1.41406 0)')
+                .cart-list__item
+                  .cart-list__item-img 
+                    img(src="static/img/product-img-1.jpg", alt="")
+                  .cart-list__item-content 
+                    .cart-list__item-title Уголь Oasis Premium Coalus 25мм
+                    .cart-list__item-amount
+                      .cart-list__item-amount-btn-sub
+                        svg(width='12' height='2' viewBox='0 0 12 2' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='1' x2='12' y2='1' stroke-width='2')
+                      input.cart-list__item-amount-input(type="number" value="1")
+                      .cart-list__item-amount-btn-add
+                        svg(width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          line(y1='6' x2='12' y2='6' stroke-width='2')
+                          line(x1='6' x2='6' y2='12' stroke-width='2')
+                    .cart-list__item-price 15 900 грн
+                  .cart-list__item-delete-btn 
+                    svg(width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg')
+                      rect(y='15.5562' width='22' height='2' rx='1' transform='rotate(-45 0 15.5562)')
+                      rect(x='1.41406' width='22' height='2' rx='1' transform='rotate(45 1.41406 0)')
+              .cart-footer 
+                .cart-results.cart-results--inline
+                  .cart-results__title Итого, без доставки: 
+                  .cart-results__value 38 100 
+                    span грн

@@ -1,0 +1,42 @@
+.benefits-section
+    margin-bottom: 50px
+    &__row
+        display: flex
+        flex-wrap: wrap
+        margin: 0 -7.5px
+    &__col
+        width: 25%
+        padding: 0 7.5px
+    &__item
+        display: flex
+        align-items: center
+    &__item-icon
+        margin-right: 15px
+    &__item-title
+        font-size: 17px
+        line-height: 130%
+        color: $sub-black
+        b
+            display: block
+
+@media (max-width: 1367px)
+    .benefits-section
+        &__row
+            margin: 0 -7.5px -35px
+        &__col
+            width: 50%
+        &__item
+            margin-bottom: 35px
+
+@media (max-width: $mob)
+    .benefits-section
+        margin-bottom: 40px
+        &__item
+            flex-direction: column
+            text-align: center
+        &__item-icon
+            margin-right: 0
+            margin-bottom: 10px
+        &__item-title
+            font-size: 15px
+            

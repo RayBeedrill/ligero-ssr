@@ -1,0 +1,179 @@
+.sidebar
+    position: fixed
+    top: 0
+    left: 0 
+    width: 300px
+    height: 100vh
+    background-color: $black
+    padding: 40px 0
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    // overflow-y: auto
+    background-image: url(../static/img/sidebar-bg.jpg)
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    z-index: 10
+    &:after
+        content: ''
+        position: fixed
+        top: 0
+        left: 0
+        width: 300px
+        height: 100%
+        background-color: rgba(28, 27, 27, 0.92)
+    &__top
+        position: relative
+        z-index: 1
+    &__middle
+        padding: 40px 0
+        position: relative
+        z-index: 1
+    &__bot
+        position: relative
+        z-index: 1
+    &__logo
+        width: 98px
+        margin: 0 auto 
+        display: block 
+        svg
+            fill: #ffffff
+            transition: 0.3s
+        &:hover
+            svg
+                fill: $orange   
+    &__page-nav
+        display: flex
+        flex-wrap: wrap
+        max-width: 175px
+        margin: 0 auto 25px
+    &__page-nav-item
+        margin: 0 15px 15px
+        position: relative
+    &__page-nav-link
+        color: $sub-white
+        transition: 0.3s
+        &:hover
+            color: $orange
+    &__nav-item
+        margin-bottom: 5vh
+        position: relative
+        &:last-child
+            margin-bottom: 0
+        &:hover
+            .sidebar__menu
+                left: 300px
+                opacity: 1
+    &__nav-link
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        position: relative
+        &:hover
+            .sidebar
+                &__nav-link-icon
+                    svg
+                        fill: $orange
+                &__nav-link-title
+                    color: $orange
+                &__nav-link-arr
+                    right: 40px
+                    opacity: 1
+    &__nav-link-icon
+        margin-bottom: 15px
+        svg
+            fill: #ffffff
+            transition: 0.3s
+    &__nav-link-title
+        font-size: 13px
+        line-height: 16px
+        color: #fff
+        text-transform: uppercase
+        letter-spacing: 0.2em
+        transition: 0.3s
+        &:hover
+            color: $orange
+    &__nav-link-arr
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        transition: 0.3s
+        opacity: 0
+        right: 30px
+        svg
+            stroke: $orange
+            transition: 0.3s
+    &__nav-submenu
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 100%
+        width: 980px
+    &__menu
+        position: absolute
+        top: -55px
+        left: 270px
+        background: #1C1B1B
+        width: 100%
+        width: 980px
+        display: flex
+        opacity: 0
+        pointer-events: none
+        transition: 0.3s
+        justify-content: space-between
+    &__menu-list
+        margin-bottom: -30px
+        display: flex
+        flex-wrap: wrap
+        padding: 90px 10px 90px 75px
+        flex-grow: 1
+    &__menu-item
+        margin-bottom: 30px
+        width: calc(100% / 3)
+    &__menu-link
+        font-size: 18px
+        line-height: 22px
+        color: #fff
+        position: relative
+        display: inline-block
+        transition: 0.3s
+        &:after
+            content: ''
+            position: absolute
+            bottom: -2px
+            left: 0
+            width: 0
+            border-bottom: 1px solid $orange
+            transition: 0.3s
+        &:hover
+            color: $orange
+            &:after
+                width: 100%
+    &__menu-img
+        width: 310px
+        flex-shrink: 0
+        img
+            display: block
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+#sidebar-menu-1
+    height: calc((71px * 4) + 15vh)
+    top: calc(50% - 90px)
+    transform: translateY(-50%)
+    
+
+@media (max-width: $desktop)
+    .sidebar
+        width: 210px
+        &:after
+            width: 210px
+        &__menu
+            left: 210px
+
+@media (max-width: $tablet)
+    .sidebar
+        display: none

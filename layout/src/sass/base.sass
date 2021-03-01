@@ -1,0 +1,71 @@
+body
+	overflow-x: hidden
+	color: $black
+	margin: 0
+	font-family: 'Museo Sans Cyrl 500'
+	background-color: #F7F6F4
+	&.disable-scroll
+		overflow: hidden
+
+*
+	box-sizing: border-box
+
+h2, .h2
+	font-size: 40px
+	line-height: 125%
+	font-family: 'Museo Sans Cyrl 700'
+	color: $sub-black
+
+h4, .h4
+	font-size: 28px
+	line-height: 125%
+	font-family: 'Museo Sans Cyrl 700'
+
+p
+	font-size: 17px
+	line-height: 170%
+	color: $sub-black
+
+.btn
+	padding: 0 18px
+	height: 34px
+	line-height: 34px
+	background-color: $orange
+	display: inline-block
+	font-size: 11px
+	color: #fff
+	letter-spacing: 0.1em
+	font-family: 'Museo Sans Cyrl 700'
+	text-transform: uppercase
+	border: none
+	pointer-events: none
+	border-radius: 34px
+	transition: 0.3s
+	&:hover
+		background-color: $sub-black
+		color: #fff
+	&--black
+		background-color: $black
+		color: #ffffff
+		&:hover
+			background-color: $orange
+	&--xl
+		height: 46px
+		line-height: 46px
+
+
+
+@media (max-width: $desktop)
+	p
+		font-size: 15px
+
+@media (max-width: $tablet)
+	h2, .h2
+		font-size: 36px
+
+@media (max-width: $mob)
+	p
+		font-size: 14px
+
+	h2, .h2
+		font-size: 24px

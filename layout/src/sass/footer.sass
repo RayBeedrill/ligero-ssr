@@ -1,0 +1,126 @@
+.footer
+    padding: 80px 0
+    background-color: #fff
+    &__inner
+        display: flex
+        justify-content: space-between
+    &__logo
+        svg
+            fill: $orange
+            transition: 0.3s
+        &:hover
+            svg
+                fill: $sub-black
+    &__nav-block
+        display: flex        
+    &__nav
+        margin-right: 80px
+        &:last-child
+            margin-right: 0
+    &__nav-item
+        margin-bottom: 20px
+        &:last-child
+            margin-bottom: 0
+    &__nav-link
+        font-size: 15px
+        line-height: 18px
+        transition: 0.3s
+        color: #555555
+        font-family: 'Museo Sans Cyrl 700'
+        &:hover
+            color: $orange
+    &__block
+        max-width: 165px
+    &__socials
+        display: flex
+        align-items: center
+        margin-bottom: 40px
+    &__socials-item
+        margin-right: 30px
+        &:last-child
+            margin-right: 0
+    &__socials-item-link
+        svg
+            fill: #555555
+            transition: 0.3s
+        &:hover
+            svg
+                fill: $orange
+    &__link
+        font-size: 15px
+        line-height: 130%
+        color: #AAAAAA
+        transition: 0.3s
+        &:hover
+            color: $sub-black
+    &__contacts
+        max-width: 215px
+    &__contacts-link
+        display: flex
+        align-items: center
+        color: #555555
+        transition: 0.3s
+        font-family: 'Museo Sans Cyrl 900'
+        margin-bottom: 10px
+        font-size: 16px
+        line-height: 19px
+        svg
+            fill: #555555
+            transition: 0.3s
+            margin-right: 10px
+            flex-shrink: 0
+        &:hover
+            color: $orange
+            svg
+                fill: $orange
+    &__contacts-text
+        font-size: 13px
+        line-height: 130%
+        color: #AAAAAA
+        padding-left: 23px
+        border-bottom: 1px solid #E1DCD5
+        padding-bottom: 15px
+        margin-bottom: 15px
+                
+@media (max-width: $desktop)
+    .footer
+        &__nav
+            margin-right: 30px
+
+@media (max-width: $laptop)
+    .footer
+        &__inner
+            flex-wrap: wrap
+        &__block
+            margin-top: 30px
+            min-width: 100%
+            width: 100%
+            display: flex
+            align-items: center
+            justify-content: space-between
+        &__socials
+            margin-bottom: 0    
+
+@media (max-width: $tablet)
+    .footer
+        &__block
+            margin-top: 60px
+
+@media (max-width: $mob)
+    .footer
+        padding: 40px 0
+        &__logo
+            margin: 0 auto 40px
+        &__nav-block
+            width: 100%
+            margin-bottom: 40px
+        &__contacts
+            margin: 0 auto 40px
+        &__block
+            margin-top: 0
+            flex-direction: column
+        &__socials
+            margin-bottom: 40px
+        &__nav
+            margin-right: 0
+            width: 50%

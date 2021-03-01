@@ -1,0 +1,23 @@
+.breadcrumbs
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    &__item
+        position: relative
+        &:after
+            content: '/'
+            font-size: 14px
+            line-height: 17px
+            color: #999999      
+            margin: 0 0.5rem
+        &:last-child
+            pointer-events: none
+            &:after
+                display: none
+    &__item-link
+        font-size: 14px
+        line-height: 17px
+        color: #999999
+        transition: 0.3s
+        &:hover
+            color: $black

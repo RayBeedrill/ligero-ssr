@@ -1,0 +1,80 @@
+.panel
+    max-width: 470px
+    width: 100%
+    background-color: #fff
+    position: fixed
+    top: 0
+    right: -100%
+    z-index: 10
+    height: 100%
+    overflow-y: auto
+    padding: 0px 50px 25px
+    opacity: 0
+    pointer-events: none
+    transition: 0.3s
+    &.active
+        opacity: 1
+        right: 60px
+        pointer-events: all
+    &__header
+        position: sticky
+        top: 0
+        left: 0
+        width: 100%
+        background-color: #fff
+        display: flex
+        align-items: center
+        padding-bottom: 25px
+        padding-top: 25px
+        border-bottom: 1px solid #E1DCD5
+        z-index: 2
+        cursor: pointer
+        &:hover
+            .panel__close-btn
+                svg
+                    fill: $black
+    &__title
+        color: #999999
+        font-size: 14px
+        line-height: 17px
+    &__close-btn
+        margin-right: 10px
+        cursor: pointer
+        width: 17px
+        height: 17px
+        svg
+            width: 100%
+            height: 100%
+            fill: $orange
+            transition: 0.3s
+    &__message
+        margin-top: 30px
+    &__message-title
+        color: #333
+        font-size: 28px
+        line-height: 125%
+        margin-bottom: 20px
+        font-family: 'Museo Sans Cyrl 700'
+    &__message-text
+        font-size: 15px
+        line-height: 150%
+        color: #555
+        margin-bottom: 30px
+    &__message-icon
+        margin-bottom: 30px
+        display: flex
+        justify-content: center
+    &__message-footer
+        text-align: center
+
+@media (max-width: $tablet)
+    .panel
+        top: 60px
+        height: calc(100% - 60px)
+        &.active
+            right: 0
+
+@media (max-width: $mob)
+    .panel
+        padding-left: 20px
+        padding-right: 20px

@@ -1,0 +1,39 @@
+.container
+    padding: 0 90px 0 330px
+    width: 100%
+
+.container-inner
+    padding: 0 35px
+    width: 100%
+
+.mb-xl
+    margin-bottom: 120px
+
+.mb-lg
+    margin-bottom: 100px
+
+.mb-md
+    margin-bottom: 50px
+
+.wrapper
+    overflow: hidden
+
+@media (max-width: $desktop)
+    .container
+        padding: 0 70px 0 220px
+
+@media (max-width: $tablet)
+    .main
+        padding-top: 60px
+
+    .container
+        padding: 0 35px
+
+    .container-inner
+        padding: 0
+        &--border
+            bottom: -100px
+
+@media (max-width: $mob)        
+    .container
+        padding: 0 20px

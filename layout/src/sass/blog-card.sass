@@ -1,0 +1,38 @@
+.blog-card
+    display: block
+    &__img
+        margin-bottom: 15px
+        img
+            display: block
+            width: 100%
+    &__title
+        font-size: 17px
+        line-height: 140%
+        color: $sub-black
+        margin-bottom: 10px
+        transition: 0.3s
+        font-family: 'Museo Sans Cyrl 700'
+    &__footer
+        display: flex
+        align-items: center
+    &__post-date
+        font-size: 12px
+        line-height: 170%
+        color: #AAAAAA
+        letter-spacing: 0.1em
+        margin-right: 20px
+    &__views
+        font-size: 12px
+        line-height: 170%
+        color: #AAAAAA
+        letter-spacing: 0.1em
+        display: flex
+        align-items: center
+        svg
+            stroke: #AAAAAA
+            margin-right: 6px
+    &:hover
+        .blog-card
+            &__title
+                color: $orange
+        

@@ -1,0 +1,138 @@
+.sort
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    flex-wrap: wrap
+    &__block
+        display: flex
+        align-items: center
+        margin-right: 20px
+    &__block-title 
+        font-size: 14px
+        line-height: 20px
+        margin-right: 0.25rem
+        white-space: nowrap
+    .select2-container--default
+        .select2-selection--single
+            border: none			
+            height: 20px
+            border-radius: 0px
+            display: flex
+            align-items: center
+            transition: 0.3s
+            &:focus
+                outline: none
+            &:hover
+            .select2-selection__rendered
+                height: 100%
+                font-size: 14px
+                line-height: 20px
+                color: #333
+                padding: 0 12px 0 0
+                position: relative
+                &::after
+                    content: ''
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    width: calc(100% - 12px)
+                    border-bottom: 1px solid #333
+                .select2-selection__placeholder
+                    color: #999999
+            .select2-selection__arrow
+                right: 0px
+                border-radius: 50%
+                top: 50%
+                transform: translateY(-50%)
+                width: 8px
+                height: 8px
+                background-image: url(../static/img/chevron-down-grey-big.svg)
+                background-repeat: no-repeat
+                background-position: center
+                background-size: contain
+                b
+                    display: none 
+        &.select2-container--open
+            .select2-selection--single
+                background-color: #fff		
+        &.select2-container--open.select2-container--below .select2-selection--single
+            border-bottom-left-radius: 0px
+            border-bottom-right-radius: 0px
+
+.filter-btn
+    width: 130px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 11px
+    line-height: 170%
+    color: #fff
+    text-transform: uppercase
+    font-family: 'Museo Sans Cyrl 700'
+    padding: 0 20px
+    height: 40px
+    border-radius: 35px
+    background-color: #333
+    cursor: pointer
+    transition: 0.3s
+    position: relative
+    svg
+        fill: #fff
+        margin-right: 5px
+        transition: 0.3s
+    span
+        position: absolute
+        background-color: $orange
+        width: 18px
+        height: 18px
+        top: -3px
+        right: -6px
+        border-radius: 50%
+        font-size: 12px
+        color: #333
+        text-align: center
+    &:hover
+        background-color: $orange
+        transition: 0.3s
+        svg
+            fill: #fff
+
+.sort-results
+    border: none
+    padding-top: 5px
+    .select2-results
+        background: #FFFFFF
+        box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15)
+        border-radius: 4px
+    .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
+        background-color: #fff !important
+    .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable
+        background-color: #fff !important
+        color: $orange
+    .select2-results__option
+        font-size: 14px
+        line-height: 17px
+        padding: 12px 15px
+        position: relative
+        transition: color 0.3s
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 15px
+            width: calc(100% - 30px)
+            border: 1px solid #E1DCD5
+        &:last-child
+            &::after
+                display: none
+        &.select2-results__option--selectable
+            background-color: #fff !important
+            color: #333
+        &.select2-results__option--selected
+            color: $orange
+        &:hover
+            color: $orange
+
+@media (max-width: $mob)
+    .sort
+        flex-w

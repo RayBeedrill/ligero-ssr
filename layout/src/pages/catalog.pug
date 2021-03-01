@@ -1,0 +1,117 @@
+extends _includes/layout
+
+block vars
+  -pageId = 'index'
+
+block content
+  include _includes/sidebar
+  include _includes/bar
+  include _includes/product-card
+  +sidebar
+  +bar
+        
+  main.main
+    .page-header.page-header--white.page-header--filter
+      .container 
+        .container-inner
+          .page-header__top
+            h1.page-header__title.h2 Кальяны
+
+            .sort 
+              .sort__block 
+                .sort__block-title Сортировка по:
+                select.sort__block-select
+                  option(value="Популярности") Популярности 
+                  option(value="Алфавиту") Алфавиту 
+                  option(value="Цене") Цене 
+
+              .filter-btn 
+                svg(width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M1.34597 5.96169H6.4847C6.74284 6.95802 7.64155 7.69922 8.71751 7.69922C9.79347 7.69922 10.6922 6.95802 10.9503 5.96169H18.6537C18.9722 5.96169 19.2306 5.70328 19.2306 5.38477C19.2306 5.06626 18.9722 4.80784 18.6537 4.80784H10.9503C10.6922 3.81151 9.79347 3.07031 8.71751 3.07031C7.64155 3.07031 6.74284 3.81151 6.4847 4.80784H1.34597C1.02746 4.80784 0.769043 5.06626 0.769043 5.38477C0.769043 5.70328 1.02746 5.96169 1.34597 5.96169ZM8.71751 4.22416C9.35753 4.22416 9.87812 4.74474 9.87812 5.38477C9.87812 6.02479 9.35753 6.54537 8.71751 6.54537C8.07749 6.54537 7.5569 6.02479 7.5569 5.38477C7.5569 4.74474 8.07749 4.22416 8.71751 4.22416Z')
+                  path(d='M18.6537 9.42308H17.4182C17.16 8.42675 16.2613 7.68555 15.1854 7.68555C14.1094 7.68555 13.2107 8.42675 12.9526 9.42308H1.34597C1.02746 9.42308 0.769043 9.68149 0.769043 10C0.769043 10.3185 1.02746 10.5769 1.34597 10.5769H12.9526C13.2107 11.5733 14.1094 12.3145 15.1854 12.3145C16.2613 12.3145 17.16 11.5733 17.4182 10.5769H18.6537C18.9722 10.5769 19.2306 10.3185 19.2306 10C19.2306 9.68149 18.9722 9.42308 18.6537 9.42308ZM15.1854 11.1606C14.5453 11.1606 14.0248 10.64 14.0248 10C14.0248 9.35998 14.5453 8.83939 15.1854 8.83939C15.8254 8.83939 16.346 9.35998 16.346 10C16.346 10.64 15.8254 11.1606 15.1854 11.1606Z')
+                  path(d='M18.6537 14.0388H7.4753C7.21722 13.0425 6.31855 12.3013 5.2432 12.3013C4.16725 12.3013 3.26853 13.0425 3.01039 14.0388H1.34597C1.02746 14.0388 0.769043 14.2972 0.769043 14.6157C0.769043 14.9342 1.02746 15.1926 1.34597 15.1926H3.01039C3.26853 16.189 4.16725 16.9302 5.2432 16.9302C6.31855 16.9302 7.21722 16.189 7.4753 15.1926H18.6537C18.9722 15.1926 19.2306 14.9342 19.2306 14.6157C19.2306 14.2972 18.9722 14.0388 18.6537 14.0388ZM5.2432 15.7763C4.60318 15.7763 4.08259 15.2557 4.08259 14.6157C4.08259 13.9757 4.60318 13.4551 5.2432 13.4551C5.88247 13.4551 6.40306 13.9757 6.40306 14.6157C6.40306 15.2557 5.88247 15.7763 5.2432 15.7763Z')
+                | фильтры
+                span.filter-btn__amount 6
+            
+          ul.breadcrumbs 
+            li.breadcrumbs__item 
+              a.breadcrumbs__item-link(href="") Главная
+            li.breadcrumbs__item 
+              a.breadcrumbs__item-link(href="") Каталог
+
+    .catalog-section.section.section-white
+      .container 
+        .container-inner
+          .catalog-section__list 
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+            .catalog-section__list-item 
+              +product-card
+    
+          ul.pagenavi
+            li.pagenavi__item 
+              a.pagenavi__item-arr(href="") 
+                svg(width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M7.5 12.8337L1.66667 6.72866L7.5 1.16699' stroke-width='2' stroke-linejoin='round')
+            li.pagenavi__item
+              a.pagenavi__item-link(href="") 1
+            li.pagenavi__item
+              a.pagenavi__item-link(href="") 2
+            li.pagenavi__item
+              a.pagenavi__item-link(href="") 3
+            li.pagenavi__item
+              a.pagenavi__item-dots ...
+            li.pagenavi__item
+              a.pagenavi__item-link(href="") 79
+            li.pagenavi__item
+              a.pagenavi__item-arr(href="") 
+                svg(width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(d='M1.5 12.8337L7.33333 6.72866L1.5 1.16699' stroke-width='2' stroke-linejoin='round')
+
+    section.section.section-text
+      .container
+        .container-inner
+          .section-text__inner
+            h2 Заголовок SEO текста
+
+            p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "З
+            p десь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, 
+            p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, 
+            p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, 
+            p Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах. 

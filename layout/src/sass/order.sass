@@ -1,0 +1,147 @@
+.order
+    position: relative
+    
+    &__row
+        display: flex
+        margin: 0 -17.5px
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            bottom: -120px
+            left: 0
+            width: 100%
+            border-bottom: 1px solid #E1DCD5
+    &__col
+        padding: 0 17.5px
+        &:first-child
+            flex-grow: 1
+        &:last-child
+            width: 400px
+            flex-shrink: 0
+    &__block
+        margin-bottom: 70px
+        &:last-child
+            margin-bottom: 0
+    &__block-header
+        display: flex
+        align-items: center
+        margin-bottom: 20px
+    &__block-number
+        width: 74px
+        height: 65px
+        flex-shrink: 0
+        background-image: url(../static/img/laurel.svg)
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        font-size: 28px
+        line-height: 125%
+        color: #444
+        font-family: 'Museo Sans Cyrl 700'
+        text-align: center
+        padding-top: 8px
+        margin-right: 20px
+    &__block-content
+        flex-grow: 1
+    &__block-title
+        font-size: 28px
+        line-height: 125%
+        font-family: 'Museo Sans Cyrl 700'
+        color: #333
+    &__block-text
+        font-size: 15px
+        line-height: 125%
+        color: #999999
+    &__block-row
+        display: flex
+        margin: 0 -7.5px -15px
+        flex-wrap: wrap
+    &__block-col-50
+        padding: 0 7.5px
+        width: 50%
+        margin-bottom: 15px
+    &__block-col-100
+        padding: 0 7.5px
+        width: 100%
+        margin-bottom: 15px
+    &__info-block
+        padding-bottom: 25px
+        border-bottom: 1px solid #E1DCD5
+    &__info-block-title 
+        font-size: 15px
+        line-height: 18px   
+        color: $orange
+        margin-bottom: 10px
+    &__info-block-list
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+    &__info-block-list-item
+        margin-right: 20px
+        &:last-child
+            margin-right: 0
+    &__info-block-list-link
+        font-size: 17px
+        line-height: 20px
+        font-family: 'Museo Sans Cyrl 700'  
+        transition: 0.3s
+        white-space: nowrap
+        svg
+            margin-right: 6px
+            fill: #333
+            transition: 0.3s
+        &:hover
+            color: $orange
+            svg
+                fill: $orange
+
+@media (max-width: $laptop)
+    .order
+        &__row
+            display: block
+        &__col
+            &:last-child
+                width: 100%
+
+@media (max-width: $tablet) 
+    .order
+        &__row
+            &::after
+                bottom: -100px  
+        &__block
+            margin-bottom: 40px
+        &__block-title
+            font-size: 20px
+        &__block-number
+            width: 64px
+            height: 55px
+            font-size: 22px
+
+@media (max-width: $mob)
+    .order
+        &__row
+            &::after
+                display: none
+
+@media (max-width: 576px)
+    .order
+        &__block
+            &:last-child
+                .order__block-header
+                    flex-wrap: wrap
+                    .btn
+                        width: 100%
+                        margin-top: 20px
+                        text-align: center
+        &__block-header
+            margin-bottom: 15px
+        &__block-col-50
+            width: 100%
+        &__block-text
+            font-size: 13px
+            margin-top: 5px
+        &__info-block-list-item
+            margin-right: 15px
+        &__info-block-list-link
+            font-size: 16px

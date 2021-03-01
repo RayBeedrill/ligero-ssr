@@ -1,0 +1,51 @@
+.pagenavi
+    display: flex
+    align-items: center
+    justify-content: center
+    &__item
+        margin: 0 6px
+    &__item-arr
+        background-color: #ECECEC
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: 0.3s
+        svg
+            stroke: #999
+            transition: 0.3s
+        &:hover
+            background-color: #333
+            svg
+                stroke: #fff
+    &__item-link
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 1px solid #E1DCD5
+        font-size: 15px
+        text-transform: uppercase
+        letter-spacing: 0.1em
+        transition: 0.3s
+        color: #999999
+        &:hover
+            border: 1px solid #333
+            background-color: #333
+            color: #fff
+    &__item-dots
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 15px
+        text-transform: uppercase
+        letter-spacing: 0.1em
+        transition: 0.3s
+        color: #999999
