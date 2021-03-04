@@ -43,11 +43,9 @@ export default function Home() {
                   <rect width="22" height="2" rx="1" fill="#C9C9C9"></rect>
                 </svg>
               </div>
-              <Link href="/">
-                <a className="header__logo" href="">
-                  <img src="static/img/logo-mob.svg" alt="" />
-                </a>
-              </Link>
+              <a className="header__logo" href="">
+                <img src="static/img/logo-mob.svg" alt="" />
+              </a>
               <ul className="header__controls">
                 <li className="header__controls-item">
                   <a className="header__controls-item-link" href="">
@@ -500,7 +498,7 @@ export default function Home() {
           </div>
           <div className="panel__message">
             <div className="panel__message-title">
-              Спасибо! <br /> Номер Вашей заявки - 3991
+              Спасибо! <br /> Номер Вашей заявки - 399
             </div>
             <div className="panel__message-text">
               В ближайшее время мы Вам позвоним и обсудим детали вашего заказа.
@@ -530,48 +528,11 @@ export default function Home() {
           }}
         />
         <main className="main">
-          <div className="page-header page-header--white page-header--filter">
+          <div className="page-header page-header--white">
             <div className="container">
               <div className="container-inner">
                 <div className="page-header__top">
-                  <h1 className="page-header__title h2">Кальяны</h1>
-                  <div className="sort">
-                    <div className="sort__block">
-                      <div className="sort__block-title">Сортировка по:</div>
-                      <Select
-                        className="sort__block-select"
-                        placeholder="Популярности"
-                        options={[
-                          {
-                            label: "Популряности",
-                            value: "Популряности",
-                          },
-                          {
-                            label: "Алфавиту",
-                            value: "Алфавиту",
-                          },
-                          {
-                            label: "Цене",
-                            value: "Цене",
-                          },
-                        ]}
-                      />
-                    </div>
-                    <div className="filter-btn">
-                      <svg
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M1.34597 5.96169H6.4847C6.74284 6.95802 7.64155 7.69922 8.71751 7.69922C9.79347 7.69922 10.6922 6.95802 10.9503 5.96169H18.6537C18.9722 5.96169 19.2306 5.70328 19.2306 5.38477C19.2306 5.06626 18.9722 4.80784 18.6537 4.80784H10.9503C10.6922 3.81151 9.79347 3.07031 8.71751 3.07031C7.64155 3.07031 6.74284 3.81151 6.4847 4.80784H1.34597C1.02746 4.80784 0.769043 5.06626 0.769043 5.38477C0.769043 5.70328 1.02746 5.96169 1.34597 5.96169ZM8.71751 4.22416C9.35753 4.22416 9.87812 4.74474 9.87812 5.38477C9.87812 6.02479 9.35753 6.54537 8.71751 6.54537C8.07749 6.54537 7.5569 6.02479 7.5569 5.38477C7.5569 4.74474 8.07749 4.22416 8.71751 4.22416Z"></path>
-                        <path d="M18.6537 9.42308H17.4182C17.16 8.42675 16.2613 7.68555 15.1854 7.68555C14.1094 7.68555 13.2107 8.42675 12.9526 9.42308H1.34597C1.02746 9.42308 0.769043 9.68149 0.769043 10C0.769043 10.3185 1.02746 10.5769 1.34597 10.5769H12.9526C13.2107 11.5733 14.1094 12.3145 15.1854 12.3145C16.2613 12.3145 17.16 11.5733 17.4182 10.5769H18.6537C18.9722 10.5769 19.2306 10.3185 19.2306 10C19.2306 9.68149 18.9722 9.42308 18.6537 9.42308ZM15.1854 11.1606C14.5453 11.1606 14.0248 10.64 14.0248 10C14.0248 9.35998 14.5453 8.83939 15.1854 8.83939C15.8254 8.83939 16.346 9.35998 16.346 10C16.346 10.64 15.8254 11.1606 15.1854 11.1606Z"></path>
-                        <path d="M18.6537 14.0388H7.4753C7.21722 13.0425 6.31855 12.3013 5.2432 12.3013C4.16725 12.3013 3.26853 13.0425 3.01039 14.0388H1.34597C1.02746 14.0388 0.769043 14.2972 0.769043 14.6157C0.769043 14.9342 1.02746 15.1926 1.34597 15.1926H3.01039C3.26853 16.189 4.16725 16.9302 5.2432 16.9302C6.31855 16.9302 7.21722 16.189 7.4753 15.1926H18.6537C18.9722 15.1926 19.2306 14.9342 19.2306 14.6157C19.2306 14.2972 18.9722 14.0388 18.6537 14.0388ZM5.2432 15.7763C4.60318 15.7763 4.08259 15.2557 4.08259 14.6157C4.08259 13.9757 4.60318 13.4551 5.2432 13.4551C5.88247 13.4551 6.40306 13.9757 6.40306 14.6157C6.40306 15.2557 5.88247 15.7763 5.2432 15.7763Z"></path>
-                      </svg>
-                      фильтры<span className="filter-btn__amount">6</span>
-                    </div>
-                  </div>
+                  <h1 className="page-header__title h2">Оформление закака</h1>
                 </div>
                 <ul className="breadcrumbs">
                   <li className="breadcrumbs__item">
@@ -583,549 +544,470 @@ export default function Home() {
                   <li className="breadcrumbs__item">
                     {" "}
                     <a className="breadcrumbs__item-link" href="">
-                      Каталог
+                      Оформление заказа
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="catalog-section section section-white">
+          <div className="order section section-white">
             <div className="container">
               <div className="container-inner">
-                <div className="catalog-section__list">
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
+                <div className="order__row">
+                  <div className="order__col">
+                    <div className="order__block">
+                      <div className="order__block-header">
+                        <div className="order__block-number">1</div>
+                        <div className="order__block-content">
+                          <div className="order__block-title">Ваши данные</div>
                         </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
+                      </div>
+                      <div className="order__block-row">
+                        <div className="order__block-col-50">
+                          <div className="form__field">
+                            <input
+                              className="form__field-input"
+                              type="text"
+                              placeholder="Имя*"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="order__block-col-50">
+                          <div className="form__field">
+                            <input
+                              className="form__field-input"
+                              type="text"
+                              placeholder="Фамилия*"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="order__block-col-50">
+                          <div className="form__field">
+                            <input
+                              className="form__field-input"
+                              type="tel"
+                              placeholder="Телефон*"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div className="order__block-col-50">
+                          <div className="form__field">
+                            <input
+                              className="form__field-input"
+                              type="email"
+                              placeholder="E-mail*"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order__block">
+                      <div className="order__block-header">
+                        <div className="order__block-number">2</div>
+                        <div className="order__block-content">
+                          <div className="order__block-title">
+                            Доставка Новой Почтой
+                          </div>
+                        </div>
+                      </div>
+                      <div className="order__block-row">
+                        <div className="order__block-col-100">
+                          <div className="form__field">
+                            <Select
+                              className="form__field-select"
+                              options={[
+                                {
+                                  label: "Тип доставки",
+                                  value: "Тип доставки",
+                                },
+                              ]}
+                              name=""
+                              placeholder="Тип доставки"
+                            />
+                          </div>
+                        </div>
+                        <div className="order__block-col-100">
+                          <div className="form__field">
+                            <Select
+                              className="form__field-select"
+                              options={[
+                                {
+                                  label: "Город",
+                                  value: "Город",
+                                },
+                              ]}
+                              name=""
+                              placeholder="Город"
+                            />
+                          </div>
+                        </div>
+                        <div className="order__block-col-100">
+                          <div className="form__field">
+                            <Select
+                              className="form__field-select"
+                              options={[
+                                {
+                                  label: "Отделение",
+                                  value: "Отделение",
+                                },
+                              ]}
+                              name=""
+                              placeholder="Отделение"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order__block">
+                      <div className="order__block-header">
+                        <div className="order__block-number">3</div>
+                        <div className="order__block-content">
+                          <div className="order__block-title">
+                            Комментарий к заказу
+                          </div>
+                          <div className="order__block-text">
+                            можете написать уточнение к заказу. Например, чтобы
+                            заказ выслали не сразу
+                          </div>
+                        </div>
+                      </div>
+                      <div className="order__block-row">
+                        <div className="order__block-col-100">
+                          <div className="form__field">
+                            <textarea
+                              className="form__field-textarea"
+                              placeholder="Ваш текст (необязательно)"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order__block">
+                      <div className="order__block-header">
+                        <div className="order__block-number">4</div>
+                        <div className="order__block-content">
+                          <div className="order__block-title">
+                            К оплате: 16 700 грн
+                          </div>
+                          <div className="order__block-text">
+                            стоимость указана без доставки
+                          </div>
+                        </div>
+                        <a className="btn btn--xl" href="">
+                          я Подтверждаю заказ
                         </a>
                       </div>
                     </div>
                   </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
+                  <div className="order__col">
+                    <div className="order__info-block">
+                      <div className="order__info-block-title">
+                        По всем вопросам звоните:
                       </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
+                      <ul className="order__info-block-list">
+                        <li className="order__info-block-list-item">
+                          {" "}
+                          <a className="order__info-block-list-link" href="">
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M2.41667 5.19667C3.37667 7.08333 4.92 8.62667 6.81 9.58667L8.27667 8.11667C8.46 7.93333 8.72333 7.88 8.95333 7.95333C9.7 8.2 10.5033 8.33333 11.3333 8.33333C11.7033 8.33333 12 8.63 12 9V11.3333C12 11.7033 11.7033 12 11.3333 12C5.07333 12 0 6.92667 0 0.666667C0 0.296667 0.3 0 0.666667 0H3C3.37 0 3.66667 0.296667 3.66667 0.666667C3.66667 1.49667 3.8 2.3 4.04667 3.04667C4.12 3.27667 4.06667 3.54 3.88333 3.72333L2.41667 5.19667Z"></path>
+                            </svg>
+                            +38 063 846 20 10
+                          </a>
+                        </li>
+                        <li className="order__info-block-list-item">
+                          {" "}
+                          <a className="order__info-block-list-link" href="">
+                            <svg
+                              width="12"
+                              height="12"
+                              viewBox="0 0 12 12"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M2.41667 5.19667C3.37667 7.08333 4.92 8.62667 6.81 9.58667L8.27667 8.11667C8.46 7.93333 8.72333 7.88 8.95333 7.95333C9.7 8.2 10.5033 8.33333 11.3333 8.33333C11.7033 8.33333 12 8.63 12 9V11.3333C12 11.7033 11.7033 12 11.3333 12C5.07333 12 0 6.92667 0 0.666667C0 0.296667 0.3 0 0.666667 0H3C3.37 0 3.66667 0.296667 3.66667 0.666667C3.66667 1.49667 3.8 2.3 4.04667 3.04667C4.12 3.27667 4.06667 3.54 3.88333 3.72333L2.41667 5.19667Z"></path>
+                            </svg>
+                            +38 063 846 20 10
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="cart-list">
+                      <div className="cart-list__item">
+                        <div className="cart-list__item-img">
+                          {" "}
+                          <img src="static/img/product-img-1.jpg" alt="" />
                         </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
+                        <div className="cart-list__item-content">
+                          <div className="cart-list__item-title">
+                            Уголь Oasis Premium Coalus 25мм
+                          </div>
+                          <div className="cart-list__item-amount">
+                            <div className="cart-list__item-amount-btn-sub">
+                              <svg
+                                width="12"
+                                height="2"
+                                viewBox="0 0 12 2"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="1"
+                                  x2="12"
+                                  y2="1"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                            <input
+                              className="cart-list__item-amount-input"
+                              type="number"
+                              value="1"
+                            />
+                            <div className="cart-list__item-amount-btn-add">
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="6"
+                                  x2="12"
+                                  y2="6"
+                                  strokeWidth="2"
+                                ></line>
+                                <line
+                                  x1="6"
+                                  x2="6"
+                                  y2="12"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="cart-list__item-price">
+                            15 900 грн
+                          </div>
+                        </div>
+                        <div className="cart-list__item-delete-btn">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 17 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              y="15.5562"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(-45 0 15.5562)"
+                            ></rect>
+                            <rect
+                              x="1.41406"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(45 1.41406 0)"
+                            ></rect>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="cart-list__item">
+                        <div className="cart-list__item-img">
+                          {" "}
+                          <img src="static/img/product-img-1.jpg" alt="" />
+                        </div>
+                        <div className="cart-list__item-content">
+                          <div className="cart-list__item-title">
+                            Уголь Oasis Premium Coalus 25мм
+                          </div>
+                          <div className="cart-list__item-amount">
+                            <div className="cart-list__item-amount-btn-sub">
+                              <svg
+                                width="12"
+                                height="2"
+                                viewBox="0 0 12 2"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="1"
+                                  x2="12"
+                                  y2="1"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                            <input
+                              className="cart-list__item-amount-input"
+                              type="number"
+                              value="1"
+                            />
+                            <div className="cart-list__item-amount-btn-add">
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="6"
+                                  x2="12"
+                                  y2="6"
+                                  strokeWidth="2"
+                                ></line>
+                                <line
+                                  x1="6"
+                                  x2="6"
+                                  y2="12"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="cart-list__item-price">
+                            15 900 грн
+                          </div>
+                        </div>
+                        <div className="cart-list__item-delete-btn">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 17 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              y="15.5562"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(-45 0 15.5562)"
+                            ></rect>
+                            <rect
+                              x="1.41406"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(45 1.41406 0)"
+                            ></rect>
+                          </svg>
+                        </div>
+                      </div>
+                      <div className="cart-list__item">
+                        <div className="cart-list__item-img">
+                          {" "}
+                          <img src="static/img/product-img-1.jpg" alt="" />
+                        </div>
+                        <div className="cart-list__item-content">
+                          <div className="cart-list__item-title">
+                            Уголь Oasis Premium Coalus 25мм
+                          </div>
+                          <div className="cart-list__item-amount">
+                            <div className="cart-list__item-amount-btn-sub">
+                              <svg
+                                width="12"
+                                height="2"
+                                viewBox="0 0 12 2"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="1"
+                                  x2="12"
+                                  y2="1"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                            <input
+                              className="cart-list__item-amount-input"
+                              type="number"
+                              value="1"
+                            />
+                            <div className="cart-list__item-amount-btn-add">
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <line
+                                  y1="6"
+                                  x2="12"
+                                  y2="6"
+                                  strokeWidth="2"
+                                ></line>
+                                <line
+                                  x1="6"
+                                  x2="6"
+                                  y2="12"
+                                  strokeWidth="2"
+                                ></line>
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="cart-list__item-price">
+                            15 900 грн
+                          </div>
+                        </div>
+                        <div className="cart-list__item-delete-btn">
+                          <svg
+                            width="17"
+                            height="17"
+                            viewBox="0 0 17 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <rect
+                              y="15.5562"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(-45 0 15.5562)"
+                            ></rect>
+                            <rect
+                              x="1.41406"
+                              width="22"
+                              height="2"
+                              rx="1"
+                              transform="rotate(45 1.41406 0)"
+                            ></rect>
+                          </svg>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
+                    <div className="cart-footer">
+                      <div className="cart-results cart-results--inline">
+                        <div className="cart-results__title">
+                          Итого, без доставки:{" "}
                         </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
+                        <div className="cart-results__value">
+                          38 100 <span>грн</span>
                         </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="catalog-section__list-item">
-                    <div className="product-card product-card--hit">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-grey-bg.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <ul className="pagenavi">
-                  <li className="pagenavi__item">
-                    {" "}
-                    <a className="pagenavi__item-arr" href="">
-                      <svg
-                        width="9"
-                        height="14"
-                        viewBox="0 0 9 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M7.5 12.8337L1.66667 6.72866L7.5 1.16699"
-                          strokeWidth="2"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-link" href="">
-                      1
-                    </a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-link" href="">
-                      2
-                    </a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-link" href="">
-                      3
-                    </a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-dots">...</a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-link" href="">
-                      79
-                    </a>
-                  </li>
-                  <li className="pagenavi__item">
-                    <a className="pagenavi__item-arr" href="">
-                      <svg
-                        width="9"
-                        height="14"
-                        viewBox="0 0 9 14"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.5 12.8337L7.33333 6.72866L1.5 1.16699"
-                          strokeWidth="2"
-                          strokeLinejoin="round"
-                        ></path>
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
-          <section className="section section-text">
-            <div className="container">
-              <div className="container-inner">
-                <div className="section-text__inner">
-                  <h2>Заголовок SEO текста</h2>
-                  <p>
-                    Давно выяснено, что при оценке дизайна и композиции читаемый
-                    текст мешает сосредоточиться. Lorem Ipsum используют потому,
-                    что тот обеспечивает более или менее стандартное заполнение
-                    шаблона, а также реальное распределение букв и пробелов в
-                    абзацах, которое не получается при простой дубликации "З
-                  </p>
-                  <p>
-                    десь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
-                    программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{" "}
-                  </p>
-                  <p>
-                    Давно выяснено, что при оценке дизайна и композиции читаемый
-                    текст мешает сосредоточиться. Lorem Ipsum используют потому,
-                    что тот обеспечивает более или менее стандартное заполнение
-                    шаблона, а также реальное распределение букв и пробелов в
-                    абзацах, которое не получается при простой дубликации "Здесь
-                    ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
-                    программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{" "}
-                  </p>
-                  <p>
-                    Давно выяснено, что при оценке дизайна и композиции читаемый
-                    текст мешает сосредоточиться. Lorem Ipsum используют потому,
-                    что тот обеспечивает более или менее стандартное заполнение
-                    шаблона, а также реальное распределение букв и пробелов в
-                    абзацах, которое не получается при простой дубликации "Здесь
-                    ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
-                    программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{" "}
-                  </p>
-                  <p>
-                    Давно выяснено, что при оценке дизайна и композиции читаемый
-                    текст мешает сосредоточиться. Lorem Ipsum используют потому,
-                    что тот обеспечивает более или менее стандартное заполнение
-                    шаблона, а также реальное распределение букв и пробелов в
-                    абзацах.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
         </main>
         <footer className="footer" id="footer">
           <div className="container">

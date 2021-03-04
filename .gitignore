@@ -28,3 +28,9 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+
+/backend/node_modules/
+/backend/.next
+/backend/node_modules/**
+/backend/.next/**
