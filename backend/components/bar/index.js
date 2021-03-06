@@ -1,4 +1,4 @@
-const bar = function ({ onSearch, onCart }) {
+const bar = function ({ onSearch, onCart, amount, totalPrice }) {
   return (
     <div className="bar">
       <ul className="bar__list">
@@ -16,8 +16,8 @@ const bar = function ({ onSearch, onCart }) {
               <path d="M15.6167 18.0233C16.0695 17.5686 16.7171 17.3126 17.3586 17.3465C17.8497 17.3641 18.3327 17.5472 18.7143 17.8565C19.2157 18.2536 19.5393 18.8672 19.5797 19.5061C19.6351 20.1893 19.3605 20.8867 18.8625 21.3559C18.4565 21.7469 17.906 21.9738 17.3444 22H17.1622C16.7132 21.9725 16.2681 21.829 15.9037 21.5622C15.3395 21.1613 14.9691 20.4974 14.936 19.8047C14.8918 19.1495 15.1509 18.4843 15.6167 18.0233ZM17.0359 18.4615C16.4232 18.5681 15.9484 19.1924 16.0378 19.8138C16.1001 20.4329 16.6926 20.9421 17.3161 20.8992C18.007 20.8833 18.5927 20.1923 18.4767 19.5061C18.401 18.8358 17.6994 18.3193 17.0359 18.4615Z"></path>
             </svg>
             <div className="bar__tooltip">
-              <div className="bar__tooltip-title">Корзина – 23 639 грн</div>
-              <div className="bar__tooltip-text">5 товаров</div>
+              <div className="bar__tooltip-title">Корзина – {totalPrice} грн</div>
+              <div className="bar__tooltip-text">{amount} товаров</div>
             </div>
           </a>
         </li>
@@ -31,7 +31,7 @@ const bar = function ({ onSearch, onCart }) {
             <div className="bar__tooltip-title">Сравнение</div>
             <div className="bar__tooltip-text">Сравнивайте товары по различным характеристикам</div>
           </div></a></li> */}
-        <li className="bar__list-item">
+        {/* <li className="bar__list-item">
           <a className="bar__list-item-link" onClick={onSearch} href="">
             <svg
               width="17"
@@ -49,7 +49,7 @@ const bar = function ({ onSearch, onCart }) {
               </div>
             </div>
           </a>
-        </li>
+        </li> */}
         {/* <li className="bar__list-item"><a className="bar__list-item-link" href="">
           <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule="evenodd" clipRule="evenodd" d="M8.26124 2.4725C7.59661 3.68685 7.21875 5.08055 7.21875 6.5625C7.21875 11.2742 11.0383 15.0937 15.75 15.0937C16.7663 15.0937 17.7411 14.916 18.645 14.59C17.1965 17.2365 14.386 19.0312 11.1562 19.0312C6.44457 19.0312 2.625 15.2117 2.625 10.5C2.625 6.80462 4.97453 3.65801 8.26124 2.4725Z" stroke="#C9C9C9" strokeWidth="1.2" strokeLinecap="round"></path>
