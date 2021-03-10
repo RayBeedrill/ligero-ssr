@@ -1,60 +1,22 @@
-import { useState, useReducer } from 'react';
-import Link from 'next/link';
-import Slider from 'react-slick';
+import { useState, useReducer } from "react";
+import Link from "next/link";
+import Select from "react-select";
+import Sidebar from '../../components/sidebar';
+import MobileSidebar from '../../components/mobileSideBar';
+import MobileMenu from '../../components/mobileMenu';
+import Bar from '../../components/bar';
+import Cart from '../../components/cart';
+import Search from '../../components/search';
 
-import Sidebar from '../components/sidebar';
-import MobileSidebar from '../components/mobileSideBar';
-import MobileMenu from '../components/mobileMenu';
-import Bar from '../components/bar';
-import Cart from '../components/cart';
-import Search from '../components/search';
+import products from '../../mocks/hookah';
+import lsCart from '../../utils/localStorageCart';
 
-import products from '../mocks/hookah';
-import lsCart from '../utils/localStorageCart';
-
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className={'products-slider__arr-next'} onClick={onClick}>
-      <svg
-        width="9"
-        height="16"
-        viewBox="0 0 9 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0.779297 15L7.7793 7.674L0.779297 1"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-  );
-}
-
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div className="products-slider__arr-prev"  onClick={onClick}>
-      <svg
-        width="9"
-        height="16"
-        viewBox="0 0 9 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M8 15L1 7.674L8 1" strokeWidth="2" strokeLinejoin="round" />
-      </svg>
-    </div>
-  );
-}
 
 export default function Home() {
   const [state, setState] = useState({
     cartActive: false,
     searchActive: false,
-    mobileMenuActive: false
+    mobileMenuActive: false,
   });
   const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
   const cart = lsCart.getCart() || [];
@@ -134,26 +96,24 @@ export default function Home() {
           </div>
           <div className="panel__message">
             <div className="panel__message-title">
-              Спасибо! <br /> Номер Вашей заявки - 399
+              Спасибо! <br /> Номер Вашей заявки - 3991
             </div>
             <div className="panel__message-text">
               В ближайшее время мы Вам позвоним и обсудим детали вашего заказа.
             </div>
             <div className="panel__message-icon">
-              {' '}
-              <img src="static/img/ico-check.svg" alt="" />
+              {" "}
+              <img src="/static/img/ico-check.svg" alt="" />
             </div>
             <div className="panel__message-footer">
               <a className="btn btn--xl" href="">
-                Все понятно{' '}
+                Все понятно{" "}
               </a>
             </div>
           </div>
         </div>
         <Sidebar />
         <Bar
-          totalPrice={totalPrice}
-          amount={amount}
           onCart={(e) => {
             e.stopPropagation();
             e.preventDefault();
@@ -164,660 +124,162 @@ export default function Home() {
             e.preventDefault();
             setState({ searchActive: !state.searchActive });
           }}
+          totalPrice={totalPrice}
+          amount={amount}
         />
         <main className="main">
-          <div className="banners-section">
+          <div className="page-header page-header--white page-header--filter">
             <div className="container">
-              <div className="banners-section__row">
-                <div className="banners-section__col">
-                  <Link href="/catalog/hookah">
-                    <a
-                      className="banners-section__item banners-section__item--main"
-                      style={{
-                        backgroundImage: 'url(static/img/banner-bg-1.jpg)',
-                      }}
-                    >
-                      <div className="banners-section__item-icon">
-                        <svg
-                          width="50"
-                          height="50"
-                          viewBox="0 0 50 50"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M40.9701 35.36C40.9857 35.4388 41.0016 35.5175 41.0145 35.5972C41.6107 39.2618 39.4415 42.7142 35.9897 43.8007L38.0295 47.8802C38.2565 48.3343 38.2322 48.8735 37.9653 49.3054C37.6984 49.7372 37.2269 50.0001 36.7192 50.0001H19.1411C18.6334 50.0001 18.1619 49.7372 17.895 49.3054C17.6281 48.8735 17.6039 48.3343 17.8308 47.8802L19.9011 43.7397C17.2971 42.8791 15.2809 40.7111 14.8457 38.0358C14.1051 33.4822 17.6023 29.3945 22.0708 29.3945H23.5356V26.2129C21.8306 25.6082 20.6059 23.98 20.6059 22.0703C20.6059 20.0466 21.9814 18.339 23.8463 17.8307C23.6466 17.329 23.5356 16.7829 23.5356 16.2109C23.5356 15.0862 23.9608 14.0594 24.6582 13.2812C24.2792 12.8584 23.9811 12.362 23.7876 11.8164H20.6059C14.1442 11.8164 8.88719 17.0734 8.88719 23.5352V35.6035C10.5922 36.2082 11.8169 37.8364 11.8169 39.7461V45.6055C11.8169 46.4145 11.161 47.0703 10.352 47.0703H8.88719V48.5352C8.88719 49.3441 8.23133 50 7.42234 50C6.61336 50 5.9575 49.3441 5.9575 48.5352V47.0703H4.49266C3.68367 47.0703 3.02781 46.4145 3.02781 45.6055V39.7461C3.02781 37.8364 4.25252 36.2082 5.9575 35.6035V23.5352C5.9575 15.458 12.5288 8.88672 20.6059 8.88672H23.5356V7.29395C21.71 5.91846 20.6059 3.75537 20.6059 1.46484C20.6059 0.655859 21.2618 0 22.0708 0H33.7895C34.5985 0 35.2544 0.655859 35.2544 1.46484C35.2544 3.75537 34.1503 5.91836 32.3247 7.29395V8.89844C39.9945 9.18223 46.5683 15.0908 46.9542 22.7826C47.2027 27.7359 44.93 32.4597 40.9701 35.36ZM5.9575 44.1406H8.88719V39.7461C8.88719 38.9384 8.23006 38.2812 7.42234 38.2812C6.61463 38.2812 5.9575 38.9384 5.9575 39.7461V44.1406ZM34.3491 47.0703L32.8843 44.1406H22.9762L21.5113 47.0703H34.3491ZM22.0708 32.3242C19.4135 32.3242 17.2856 34.7878 17.7374 37.5652C18.0756 39.6437 20.0733 41.2109 22.3844 41.2109H33.7895C36.4205 41.2109 38.5796 38.8754 38.1229 36.0676C37.7814 33.9685 35.7402 32.3242 33.476 32.3242H30.8598C30.0509 32.3242 29.395 31.6684 29.395 30.8594V26.4648H26.4653V30.8594C26.4653 31.6684 25.8095 32.3242 25.0005 32.3242H22.0708ZM25.0005 23.5352H30.8598C31.6676 23.5352 32.3247 22.878 32.3247 22.0703C32.3247 21.2626 31.6676 20.6055 30.8598 20.6055H25.0005C24.1928 20.6055 23.5356 21.2626 23.5356 22.0703C23.5356 22.878 24.1928 23.5352 25.0005 23.5352ZM26.4653 16.2109C26.4653 17.0187 27.1224 17.6758 27.9302 17.6758C28.7379 17.6758 29.395 17.0187 29.395 16.2109C29.395 15.4032 28.7379 14.7461 27.9302 14.7461C27.1224 14.7461 26.4653 15.4032 26.4653 16.2109ZM23.7883 2.92969C24.1306 3.88555 24.8077 4.70449 25.7373 5.24551C26.1881 5.50781 26.4653 5.99004 26.4653 6.51152V10.3516C26.4653 11.1593 27.1224 11.8164 27.9302 11.8164C28.7379 11.8164 29.395 11.1593 29.395 10.3516V6.51152C29.395 5.99004 29.6722 5.50781 30.123 5.24551C31.0526 4.70449 31.7297 3.88555 32.0721 2.92969H23.7883ZM44.0283 22.9294C43.7261 16.9056 38.3952 11.9861 32.0713 11.8209C31.8777 12.3647 31.5802 12.8596 31.2022 13.2812C31.8997 14.0593 32.3248 15.0861 32.3248 16.2108C32.3248 16.7828 32.2138 17.3289 32.0141 17.8306C33.879 18.3389 35.2545 20.0465 35.2545 22.0702C35.2545 23.9799 34.0298 25.6081 32.3248 26.2128V29.3945H33.4761C36.0351 29.3945 38.3667 30.6548 39.7609 32.5915C42.6064 30.2497 44.216 26.6715 44.0283 22.9294Z"></path>
-                        </svg>
-                      </div>
-                      <div className="banners-section__item-content">
-                        <div className="banners-section__item-title">
-                          Кальяны
-                        </div>
-                        <div className="banners-section__item-text">
-                          поможем выбрать кальян
-                        </div>
-                      </div>
+              <div className="container-inner">
+                <div className="page-header__top">
+                  <h1 className="page-header__title h2">Кальяны</h1>
+                  {/* <div className="sort">
+                    <div className="sort__block">
+                      <div className="sort__block-title">Сортировка по:</div>
+                      <Select
+                        className="sort__block-select"
+                        placeholder="Популярности"
+                        options={[
+                          {
+                            label: "Популряности",
+                            value: "Популряности",
+                          },
+                          {
+                            label: "Алфавиту",
+                            value: "Алфавиту",
+                          },
+                          {
+                            label: "Цене",
+                            value: "Цене",
+                          },
+                        ]}
+                      />
+                    </div>
+                    <div className="filter-btn">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M1.34597 5.96169H6.4847C6.74284 6.95802 7.64155 7.69922 8.71751 7.69922C9.79347 7.69922 10.6922 6.95802 10.9503 5.96169H18.6537C18.9722 5.96169 19.2306 5.70328 19.2306 5.38477C19.2306 5.06626 18.9722 4.80784 18.6537 4.80784H10.9503C10.6922 3.81151 9.79347 3.07031 8.71751 3.07031C7.64155 3.07031 6.74284 3.81151 6.4847 4.80784H1.34597C1.02746 4.80784 0.769043 5.06626 0.769043 5.38477C0.769043 5.70328 1.02746 5.96169 1.34597 5.96169ZM8.71751 4.22416C9.35753 4.22416 9.87812 4.74474 9.87812 5.38477C9.87812 6.02479 9.35753 6.54537 8.71751 6.54537C8.07749 6.54537 7.5569 6.02479 7.5569 5.38477C7.5569 4.74474 8.07749 4.22416 8.71751 4.22416Z"></path>
+                        <path d="M18.6537 9.42308H17.4182C17.16 8.42675 16.2613 7.68555 15.1854 7.68555C14.1094 7.68555 13.2107 8.42675 12.9526 9.42308H1.34597C1.02746 9.42308 0.769043 9.68149 0.769043 10C0.769043 10.3185 1.02746 10.5769 1.34597 10.5769H12.9526C13.2107 11.5733 14.1094 12.3145 15.1854 12.3145C16.2613 12.3145 17.16 11.5733 17.4182 10.5769H18.6537C18.9722 10.5769 19.2306 10.3185 19.2306 10C19.2306 9.68149 18.9722 9.42308 18.6537 9.42308ZM15.1854 11.1606C14.5453 11.1606 14.0248 10.64 14.0248 10C14.0248 9.35998 14.5453 8.83939 15.1854 8.83939C15.8254 8.83939 16.346 9.35998 16.346 10C16.346 10.64 15.8254 11.1606 15.1854 11.1606Z"></path>
+                        <path d="M18.6537 14.0388H7.4753C7.21722 13.0425 6.31855 12.3013 5.2432 12.3013C4.16725 12.3013 3.26853 13.0425 3.01039 14.0388H1.34597C1.02746 14.0388 0.769043 14.2972 0.769043 14.6157C0.769043 14.9342 1.02746 15.1926 1.34597 15.1926H3.01039C3.26853 16.189 4.16725 16.9302 5.2432 16.9302C6.31855 16.9302 7.21722 16.189 7.4753 15.1926H18.6537C18.9722 15.1926 19.2306 14.9342 19.2306 14.6157C19.2306 14.2972 18.9722 14.0388 18.6537 14.0388ZM5.2432 15.7763C4.60318 15.7763 4.08259 15.2557 4.08259 14.6157C4.08259 13.9757 4.60318 13.4551 5.2432 13.4551C5.88247 13.4551 6.40306 13.9757 6.40306 14.6157C6.40306 15.2557 5.88247 15.7763 5.2432 15.7763Z"></path>
+                      </svg>
+                      фильтры<span className="filter-btn__amount">6</span>
+                    </div>
+                  </div> */}
+                </div>
+                <ul className="breadcrumbs">
+                  <li className="breadcrumbs__item">
+                    {" "}
+                    <Link href="/"><a className="breadcrumbs__item-link">
+                      Главная
+                    </a></Link>
+                  </li>
+                  <li className="breadcrumbs__item">
+                    {" "}
+                    <a className="breadcrumbs__item-link" href="">
+                      Каталог
                     </a>
-                  </Link>
-                </div>
-                <div className="banners-section__col">
-                  <a
-                    className="banners-section__item"
-                    href=""
-                    style={{
-                      backgroundImage: 'url(static/img/banner-bg-2.jpg)',
-                    }}
-                  >
-                    <div className="banners-section__item-icon">
-                      <svg
-                        width="50"
-                        height="37"
-                        viewBox="0 0 50 37"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M0.0952517 32.6589C-0.0782612 31.7279 0.0417106 30.7766 0.0248551 29.8364C-0.0118305 29.2858 0.438312 28.7518 1.02826 28.6787C4.26254 28.2262 7.49979 27.7839 10.7341 27.3341C10.7866 26.7261 10.5566 25.9997 11.0494 25.5028C11.5084 25.0104 12.4246 25.0373 12.8499 25.5564C13.2555 26.0117 13.076 26.6419 13.1147 27.1824C18.6354 27.1824 24.156 27.1824 29.6767 27.1824C30.9944 27.162 32.327 27.2619 33.6279 27.0121C36.0511 26.5762 38.274 25.2529 39.7306 23.3947C41.1266 21.6447 41.8226 19.4247 41.6471 17.2472C41.5232 15.4168 40.7716 13.6382 39.565 12.1945C38.3851 10.7722 36.7491 9.69502 34.9317 9.10554C32.9051 8.45868 30.6544 8.44758 28.6208 9.07222C26.4157 9.7561 24.4763 11.1729 23.2637 13.0255C21.6922 15.3428 21.3481 18.3272 22.3029 20.9146C22.6301 21.8233 23.1953 22.6303 23.7069 23.4548C23.8685 23.7306 24.0361 24.0462 23.9577 24.3691C23.7079 25.1335 22.5211 25.4704 21.9182 24.8522C20.4439 23.081 19.5882 20.8831 19.4186 18.6501C19.266 16.469 19.8004 14.2508 20.9337 12.3389C22.1036 10.3595 23.9111 8.71131 26.0677 7.67856C27.9614 6.76519 30.114 6.31822 32.2447 6.39966C34.5738 6.4922 36.8681 7.22419 38.7777 8.47164C41.9029 10.477 43.8979 13.901 44.0406 17.4342C44.1537 19.9142 43.3595 22.4165 41.8435 24.4524C39.8505 27.1666 36.5528 28.9869 33.0508 29.3367C32.2269 29.4237 31.397 29.4015 30.5701 29.4033C24.7519 29.4042 18.9338 29.4033 13.1167 29.4043C13.1127 30.5147 13.1157 31.6243 13.1147 32.7348C19.2283 32.7348 25.3409 32.7338 31.4535 32.7357C32.9546 32.7487 34.4627 32.5913 35.9063 32.2036C40.4276 31.0802 44.3222 27.9773 46.213 23.9832C47.1054 22.1343 47.6001 20.1151 47.6219 18.0856C47.6794 14.1869 46.0157 10.2882 43.0709 7.51847C40.0528 4.60623 35.7001 2.96179 31.3633 3.06266C27.0245 3.14502 22.758 4.97731 19.8817 8.01171C17.1392 10.8545 15.642 14.7218 15.8463 18.5465C15.8939 18.937 15.7808 19.359 15.4467 19.6172C15.0104 19.9911 14.2797 19.9799 13.8543 19.5978C13.6005 19.3877 13.4746 19.0731 13.4667 18.7612C13.2912 15.5528 14.1042 12.2963 15.8185 9.50809C17.5497 6.62916 20.2079 4.2481 23.3509 2.73507C27.3338 0.802822 32.092 0.317913 36.4259 1.41452C39.9308 2.28162 43.1512 4.14723 45.513 6.71707C47.8173 9.17587 49.3303 12.2667 49.8171 15.5019C50.3317 18.8167 49.7507 22.2638 48.196 25.2807C46.675 28.2364 44.2191 30.7664 41.2148 32.4636C38.7262 33.8906 35.8617 34.7355 32.9487 34.9169C32.1565 34.9687 31.3623 34.9548 30.5691 34.9557C24.7519 34.9567 18.9338 34.9557 13.1167 34.9567C13.1147 35.4295 13.1603 35.9219 12.9808 36.3744C12.6923 37.1823 11.2516 37.2128 10.9016 36.4364C10.6627 35.9237 10.7321 35.3481 10.737 34.804C7.49979 34.3533 4.26155 33.9128 1.02528 33.4584C0.559275 33.4279 0.168623 33.0883 0.0952517 32.6589ZM2.40545 31.4059C5.18067 31.7909 7.95688 32.174 10.7331 32.558C10.737 31.5641 10.7331 30.5703 10.7341 29.5754C7.95985 29.9595 5.18662 30.35 2.4114 30.7267C2.40744 30.9534 2.40545 31.1792 2.40545 31.4059Z"></path>
-                        <path d="M14.4668 23.4983C14.1535 22.7376 14.9398 21.9103 15.7756 22.0103C16.7225 22.1204 17.0854 23.4234 16.3943 23.9999C15.7865 24.4968 14.7008 24.2312 14.4668 23.4983Z"></path>
-                        <path d="M25.5583 18.3235C25.4632 17.1519 25.7616 15.9544 26.414 14.9485C27.3321 13.4975 28.9622 12.4574 30.7489 12.1992C32.016 12.0122 33.3496 12.1936 34.4928 12.7442C35.6667 13.2902 36.6424 14.199 37.2323 15.2928C37.9422 16.5624 38.089 18.0856 37.6735 19.4608C37.2224 20.9562 36.096 22.261 34.6237 22.9856C33.5439 23.5372 32.2817 23.7556 31.0602 23.6325C29.3974 23.4733 27.8299 22.6377 26.8195 21.3976C26.0928 20.5157 25.6416 19.4349 25.5583 18.3235ZM27.936 18.23C28.047 19.409 28.8392 20.5074 29.9695 21.0451C31.1227 21.6179 32.5931 21.5688 33.7006 20.9238C35.0847 20.1585 35.8184 18.5234 35.4188 17.0668C35.1601 16.0488 34.3936 15.1558 33.3813 14.7052C32.4324 14.2684 31.2872 14.2332 30.3076 14.6024C28.7758 15.153 27.7565 16.7049 27.936 18.23Z"></path>
-                      </svg>
-                    </div>
-                    <div className="banners-section__item-content">
-                      <div className="banners-section__item-title">
-                        Аксессуары
-                      </div>
-                      <div className="banners-section__item-text">
-                        узнать больше
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div className="banners-section__col">
-                  <a
-                    className="banners-section__item"
-                    href=""
-                    style={{
-                      backgroundImage: 'url(static/img/banner-bg-3.jpg)',
-                    }}
-                  >
-                    <div className="banners-section__item-icon">
-                      <svg
-                        width="50"
-                        height="34"
-                        viewBox="0 0 50 34"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M49.7335 10.1785L49.5725 9.17937L48.502 9.02907C48.1793 8.98377 41.0211 8.01845 34.5868 10.2553C31.6877 4.66584 26.1851 0.816847 25.8709 0.600376L25 0L24.1291 0.600285C23.8151 0.816756 18.3125 4.66575 15.4133 10.2553C8.97887 8.01845 1.82087 8.98377 1.49812 9.02907L0.427517 9.17937L0.266482 10.1785C0.187478 10.6691 -1.59074 22.2663 5.21667 28.6198C11.7598 34.7267 23.4932 33.4306 24.8613 33.2552H25.1388C25.585 33.3124 27.1326 33.4888 29.2442 33.4887C33.6072 33.4886 40.3741 32.7351 44.7833 28.6198C51.5908 22.2663 49.8125 10.6691 49.7335 10.1785ZM44.9772 11.5335L35.9669 19.943C36.2059 18.9621 36.342 17.948 36.342 16.9072C36.342 15.4831 36.0891 14.1084 35.6628 12.8018C38.9347 11.6773 42.5094 11.4879 44.9772 11.5335ZM33.4105 16.9072C33.4105 20.3214 31.554 23.5029 29.5016 25.9773L26.466 28.8106V4.69892C29.2159 7.1677 33.4105 11.7748 33.4105 16.9072ZM23.5342 4.69901V28.8107L20.4985 25.9774C18.446 23.503 16.5896 20.3215 16.5896 16.9072C16.5897 11.7746 20.7846 7.16742 23.5342 4.69901ZM14.3374 12.8016C13.911 14.1083 13.6581 15.4831 13.6581 16.9072C13.6581 17.9481 13.7942 18.9622 14.0332 19.9431L5.01979 11.5307C7.48483 11.4836 11.0571 11.6726 14.3374 12.8016ZM7.28971 26.6851C3.40115 23.0558 2.87702 17.0296 2.95115 13.4694L18.2238 27.7239C19.1971 28.893 20.2019 29.9091 21.1013 30.739C17.252 30.7716 11.0622 30.2061 7.28971 26.6851ZM42.7104 26.6851C38.9377 30.2062 32.7477 30.7716 28.8987 30.739C29.7982 29.9091 30.803 28.8929 31.7764 27.7238L47.0489 13.4694C47.1231 17.0298 46.5988 23.0558 42.7104 26.6851Z"></path>
-                      </svg>
-                    </div>
-                    <div className="banners-section__item-content">
-                      <div className="banners-section__item-title">Табак</div>
-                      <div className="banners-section__item-text">
-                        подобрать
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div className="banners-section__col">
-                  <a
-                    className="banners-section__item"
-                    href=""
-                    style={{
-                      backgroundImage: 'url(static/img/banner-bg-4.jpg)',
-                    }}
-                  >
-                    <div className="banners-section__item-icon">
-                      <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 50 50"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M24.5133 5.0263C25.2476 4.94562 26.0153 5.04866 26.6788 5.3617C31.8461 7.83876 37.0166 10.309 42.1851 12.7851C42.6746 13.0349 43.2069 13.2235 43.6422 13.556C44.5078 14.1996 45.0328 15.2301 44.9984 16.2645C45.0005 22.4221 44.9995 28.5798 44.9995 34.7374C44.9536 35.9429 44.162 37.0978 42.9975 37.6257C37.5812 40.2184 32.1649 42.8112 26.7486 45.403C25.6976 45.9202 24.3821 45.9309 23.3186 45.437C17.8606 42.8219 12.4006 40.2107 6.94154 37.5975C5.77703 37.0453 4.99167 35.8554 5.00104 34.6344C5 28.4796 4.99896 22.3239 5.00208 16.1682C4.98958 14.9229 5.80828 13.7155 7.00612 13.172C12.4224 10.5793 17.8387 7.98653 23.2561 5.39378C23.6467 5.20227 24.0748 5.07977 24.5133 5.0263ZM24.5362 7.58017C19.0543 10.1992 13.5786 12.8279 8.09667 15.4449C13.7359 18.2088 19.3647 20.9882 24.9997 23.7588C30.6296 20.9814 36.2688 18.2224 41.8944 15.4372C36.425 12.8337 30.9681 10.2089 25.5039 7.59864C25.208 7.45476 24.8383 7.45087 24.5362 7.58017ZM7.66337 18.3157C7.67274 23.5945 7.66649 28.8743 7.66649 34.1531C7.67691 34.474 7.61024 34.8356 7.83419 35.1098C7.98626 35.3372 8.26854 35.4315 8.51123 35.5511C13.563 37.9689 18.6137 40.3866 23.6654 42.8034C23.6686 37.3204 23.6623 31.8365 23.6686 26.3525C18.3366 23.6684 12.9953 21.0008 7.66337 18.3157ZM26.4653 26.2826C26.4694 31.7694 26.4684 37.2563 26.4663 42.7431C31.568 40.2982 36.6708 37.8561 41.7747 35.415C42.0976 35.2779 42.3319 34.9668 42.3298 34.6324C42.3371 29.1932 42.3257 23.7549 42.3361 18.3167C37.0489 20.9765 31.7555 23.6266 26.4653 26.2826Z"></path>
-                      </svg>
-                    </div>
-                    <div className="banners-section__item-content">
-                      <div className="banners-section__item-title">Уголь</div>
-                      <div className="banners-section__item-text">перейти</div>
-                    </div>
-                  </a>
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-          <div className="benefits-section">
+          <div className="catalog-section section section-white">
             <div className="container">
               <div className="container-inner">
-                <div className="benefits-section__row">
-                  <div className="benefits-section__col">
-                    <div className="benefits-section__item">
-                      <div className="benefits-section__item-icon">
-                        <img src="static/img/beneftis-icon.svg" alt="" />
-                      </div>
-                      <div className="benefits-section__item-title">
-                        <b>Доставка </b>по всей Украине
-                      </div>
-                    </div>
-                  </div>
-                  <div className="benefits-section__col">
-                    <div className="benefits-section__item">
-                      <div className="benefits-section__item-icon">
-                        <img src="static/img/beneftis-icon.svg" alt="" />
-                      </div>
-                      <div className="benefits-section__item-title">
-                        <b>Высылаем </b>в день заказа
-                      </div>
-                    </div>
-                  </div>
-                  <div className="benefits-section__col">
-                    <div className="benefits-section__item">
-                      <div className="benefits-section__item-icon">
-                        <img src="static/img/beneftis-icon.svg" alt="" />
-                      </div>
-                      <div className="benefits-section__item-title">
-                        <b>Гарантия </b>на обмен 14 дней
-                      </div>
-                    </div>
-                  </div>
-                  <div className="benefits-section__col">
-                    <div className="benefits-section__item">
-                      <div className="benefits-section__item-icon">
-                        <img src="static/img/beneftis-icon.svg" alt="" />
-                      </div>
-                      <div className="benefits-section__item-title">
-                        <b>Все товары </b>сертифицированы
-                      </div>
-                    </div>
-                  </div>
+                <div className="catalog-section__list">
+                {products.map(item => {
+                  return (<div key={item.id} className="catalog-section__list-item">
+                            <div className="product-card product-card--hit">
+                              <a className="product-card__img" href="">
+                                <img src={item.img} alt="" />
+                              </a>
+                              <div className="product-card__rate">
+                                <img src="/static/img/rate-list.svg" alt="" />
+                              </div>
+                              <a className="product-card__title" href="">
+                                {`${item.brand} - ${item.model}`}
+                              </a>
+                              <div className="product-card__footer">
+                                <div className="product-card__price">
+                                  {item.price} <span>грн</span>
+                                </div>
+                                <a className="product-card__buy-btn btn" onClick={(e) => {addToCart(e, item)}}>
+                                  купить
+                                </a>
+                              </div>
+                            </div>
+                          </div>);
+                })}  
+                  
                 </div>
+                {/* <ul className="pagenavi">
+                  <li className="pagenavi__item">
+                    {" "}
+                    <a className="pagenavi__item-arr" href="">
+                      <svg
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7.5 12.8337L1.66667 6.72866L7.5 1.16699"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-link" href="">
+                      1
+                    </a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-link" href="">
+                      2
+                    </a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-link" href="">
+                      3
+                    </a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-dots">...</a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-link" href="">
+                      79
+                    </a>
+                  </li>
+                  <li className="pagenavi__item">
+                    <a className="pagenavi__item-arr" href="">
+                      <svg
+                        width="9"
+                        height="14"
+                        viewBox="0 0 9 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.5 12.8337L7.33333 6.72866L1.5 1.16699"
+                          strokeWidth="2"
+                          strokeLinejoin="round"
+                        ></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul> */}
               </div>
             </div>
           </div>
-          <section className="section section-white section--border">
-            <div className="container">
-              <div className="container-inner">
-                <div className="section__header">
-                  <h2 className="section__header-title">Хиты продаж</h2>
-                  <Link href="/catalog/hookah">
-                    <a className="btn btn--black">Смотреть все</a>
-                  </Link>
-                </div>
-                <Slider
-                  slidesToShow={4}
-                  nextArrow={<NextArrow />}
-                  prevArrow={<PrevArrow />}
-                  responsive={ [
-                    {
-                      breakpoint: 1500,
-                      settings: {
-                        slidesToShow: 3,
-                      },
-                    },
-                    {
-                      breakpoint: 768,
-                      settings: {
-                        variableWidth: true,
-                      },
-                    },
-                  ]}
-                  // className="products-slider"
-                  settings={{
-                    infinite: true,
-                    arrows: true,
-                  }}
-                >
-                  {products.slice(0,8).map(product => {
-                    return ( 
-                      <div key={product.id} className="products-slider__item">
-                        <div className="product-card product-card--hit">
-                          <a className="product-card__img" href="">
-                            <img src={product.img} alt="" />
-                          </a>
-                          <div className="product-card__rate">
-                            <img src="static/img/rate-list.svg" alt="" />
-                          </div>
-                          <a className="product-card__title" href="">
-                            {`${product.brand} - ${product.model} ${product.id}`}
-                          </a>
-                          <div className="product-card__footer">
-                            <div className="product-card__price">
-                              ${product.price} <span>грн</span>
-                            </div>
-                            <a className="product-card__buy-btn btn" onClick={(e) => {addToCart(e, product)}}>
-                              купить
-                            </a>
-                          </div>
-                        </div>
-                      </div>) })}
-                </Slider>
-              </div>
-            </div>
-          </section>
-          <section className="section section-white section--border">
-            <div className="container">
-              <div className="container-inner">
-                <div className="section__header">
-                  <h2 className="section__header-title">Новинки</h2>
-                  <Link href="/catalog/hookah">
-                    <a className="btn btn--black" href="">
-                      Смотреть все
-                    </a>
-                  </Link>
-                </div>
-                <Slider
-                  className="products-slider"
-                  slidesToShow={4}
-                  nextArrow={<NextArrow />}
-                  prevArrow={<PrevArrow />}
-                  responsive={ [
-                    {
-                      breakpoint: 1500,
-                      settings: {
-                        slidesToShow: 3,
-                      },
-                    },
-                    {
-                      breakpoint: 768,
-                      settings: {
-                        variableWidth: true,
-                      },
-                    },
-                  ]}
-                  settings={{
-                    arrows: true,
-                    infinity: true,
-                  }}
-                >
-                  {products.slice(0,8).map(product => {
-                    return (
-                      <div key={product.id} className="products-slider__item">
-                        <div className="product-card product-card--new">
-                          <a className="product-card__img" href="">
-                            <img src={product.img} alt="" />
-                          </a>
-                          <div className="product-card__rate">
-                            <img src="static/img/rate-list.svg" alt="" />
-                          </div>
-                          <a className="product-card__title" href="">
-                            {`${product.brand} - ${product.model} ${product.id}`}
-                          </a>
-                          <div className="product-card__footer">
-                            <div className="product-card__price">
-                              {product.price} <span>грн</span>
-                            </div>
-                            <a className="product-card__buy-btn btn" onClick={(e) => {addToCart(e, product)}}>
-                              купить
-                            </a>
-                          </div>
-                        </div>
-                      </div>);  
-                  })}
-                </Slider>
-              </div>
-            </div>
-          </section>
-          {/* <section className="section section-white">
-            <div className="container">
-              <div className="container-inner">
-                <div className="section__header">
-                  <h2 className="section__header-title">
-                    Товары с видео обзором
-                  </h2>
-                  <Link href="/catalog/hookah">
-                    <a className="btn btn--black" href="">
-                      Смотреть все
-                    </a>
-                  </Link>
-                </div>
-                <Slider
-                  className="products-slider"
-                  slidesToShow={4}
-                  nextArrow={<NextArrow />}
-                  prevArrow={<PrevArrow />}
-                  settings={{
-                    arrows: true,
-                    infinity: true,
-                    nextArrow:
-                      '<div class="products-slider__arr-next"><svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.779297 15L7.7793 7.674L0.779297 1" stroke-width="2" stroke-linejoin="round"/></svg></div>',
-                    prevArrow:
-                      '<div class="products-slider__arr-prev"><svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 15L1 7.674L8 1" stroke-width="2" stroke-linejoin="round"/></svg></div>',
-                    responsive: [
-                      {
-                        breakpoint: 1500,
-                        settings: {
-                          slidesToShow: 3,
-                        },
-                      },
-                      {
-                        breakpoint: 768,
-                        settings: {
-                          variableWidth: true,
-                        },
-                      },
-                    ],
-                  }}
-                >
-                  <div className="products-slider__item">
-                    <div className="product-card">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-1.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="products-slider__item">
-                    <div className="product-card">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-1.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="products-slider__item">
-                    <div className="product-card">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-1.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="products-slider__item">
-                    <div className="product-card">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-1.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="products-slider__item">
-                    <div className="product-card">
-                      <a className="product-card__img" href="">
-                        <img src="static/img/product-img-1.jpg" alt="" />
-                      </a>
-                      <div className="product-card__rate">
-                        <img src="static/img/rate-list.svg" alt="" />
-                      </div>
-                      <a className="product-card__title" href="">
-                        Alpha Hookah Kappa - White Cosmo
-                      </a>
-                      <div className="product-card__footer">
-                        <div className="product-card__price">
-                          15 900 <span>грн</span>
-                        </div>
-                        <a className="product-card__buy-btn btn" href="">
-                          купить
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
-              </div>
-            </div>
-          </section> */}
-          {/* <section className="section section-blog section--border">
-            <div className="container">
-              <div className="container-inner">
-                <div className="section__header">
-                  <h2>Блог</h2>
-                  <a className="btn btn--black" href="#">
-                    Смотреть все
-                  </a>
-                </div>
-                <div className="blog-list">
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-1.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-2.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-3.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-4.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-5.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="blog-list__item">
-                    <a className="blog-card" href="">
-                      <div className="blog-card__img">
-                        <img src="static/img/blog-card-img-6.jpg" alt="" />
-                      </div>
-                      <div className="blog-card__title">
-                        Все нюансы кальяна Alpha Hookah Kappa - White Cosmo за
-                        пять минут
-                      </div>
-                      <div className="blog-card__footer">
-                        <div className="blog-card__post-date">03/01/2020</div>
-                        <div className="blog-card__views">
-                          <svg
-                            width="14"
-                            height="11"
-                            viewBox="0 0 14 11"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13.2606 5.5392C13.2681 5.52155 13.272 5.50257 13.272 5.48339C13.272 5.4642 13.2681 5.44522 13.2606 5.42757C12.9927 4.92246 10.8885 1.09368 7.17972 1.00159C3.47093 0.909499 1.31934 4.84432 1.01795 5.41362C1.00619 5.43398 1 5.45708 1 5.48059C1 5.50411 1.00619 5.52721 1.01795 5.54757C1.34724 6.08617 3.64954 9.71123 6.53228 9.97634C9.71084 10.2554 12.2894 8.02288 13.2606 5.5392Z"
-                              strokeWidth="1.2"
-                            ></path>
-                            <path
-                              d="M7.09631 7.3728C8.16131 7.3728 9.02466 6.50945 9.02466 5.44446C9.02466 4.37946 8.16131 3.51611 7.09631 3.51611C6.03132 3.51611 5.16797 4.37946 5.16797 5.44446C5.16797 6.50945 6.03132 7.3728 7.09631 7.3728Z"
-                              strokeWidth="1.2"
-                            ></path>
-                          </svg>
-                          34
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> */}
           <section className="section section-text">
             <div className="container">
               <div className="container-inner">
@@ -833,7 +295,7 @@ export default function Home() {
                   <p>
                     десь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
                     программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{' '}
+                    Lorem Ipsum в качестве текста по умолчанию,{" "}
                   </p>
                   <p>
                     Давно выяснено, что при оценке дизайна и композиции читаемый
@@ -843,7 +305,7 @@ export default function Home() {
                     абзацах, которое не получается при простой дубликации "Здесь
                     ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
                     программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{' '}
+                    Lorem Ipsum в качестве текста по умолчанию,{" "}
                   </p>
                   <p>
                     Давно выяснено, что при оценке дизайна и композиции читаемый
@@ -853,14 +315,14 @@ export default function Home() {
                     абзацах, которое не получается при простой дубликации "Здесь
                     ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие
                     программы электронной вёрстки и редакторы HTML используют
-                    Lorem Ipsum в качестве текста по умолчанию,{' '}
+                    Lorem Ipsum в качестве текста по умолчанию,{" "}
                   </p>
                   <p>
                     Давно выяснено, что при оценке дизайна и композиции читаемый
                     текст мешает сосредоточиться. Lorem Ipsum используют потому,
                     что тот обеспечивает более или менее стандартное заполнение
                     шаблона, а также реальное распределение букв и пробелов в
-                    абзацах.{' '}
+                    абзацах.{" "}
                   </p>
                 </div>
               </div>
@@ -1027,7 +489,7 @@ export default function Home() {
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path d="M21.788 3.0855C21.7234 2.36466 21.407 1.68961 20.8942 1.17886C20.3814 0.668108 19.7052 0.354304 18.9841 0.292534C17.2597 0.149446 14.7038 0 11.5501 0C7.75237 0 4.88562 0.155155 3.03225 0.300652C2.30777 0.358854 1.62723 0.671447 1.11105 1.18312C0.594864 1.69479 0.276309 2.37256 0.21175 3.0965C0.0982961 4.29023 0 5.86679 0 7.74653C0 9.57948 0.0974819 11.1282 0.210408 12.3071C0.275612 13.0304 0.594435 13.7073 1.11052 14.2183C1.62661 14.7292 2.30672 15.0413 3.03063 15.0992C4.88393 15.2447 7.75123 15.4 11.5501 15.4C14.7038 15.4 17.2597 15.2506 18.9841 15.1074C19.7052 15.0457 20.3815 14.7319 20.8942 14.2211C21.407 13.7104 21.7235 13.0353 21.788 12.3145C21.9016 11.127 22 9.56108 22 7.7C22 5.83892 21.9016 4.27297 21.788 3.0855ZM8.55353 10.9327V4.46734L14.9314 7.7L8.55353 10.9327Z">
-                            {' '}
+                            {" "}
                           </path>
                         </svg>
                       </a>
@@ -1042,7 +504,6 @@ export default function Home() {
           </div>
         </footer>
       </div>
-
       <style jsx global>{`
        /* Slider */
        .slick-slider

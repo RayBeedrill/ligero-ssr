@@ -1,7 +1,7 @@
 const products = [
     {
         "id": 1,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -9,7 +9,7 @@ const products = [
     },
     {
         "id": 2,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -17,7 +17,7 @@ const products = [
     },
     {
         "id": 3,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -25,7 +25,7 @@ const products = [
     },
     {
         "id": 4,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -33,7 +33,7 @@ const products = [
     },
     {
         "id": 5,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -41,7 +41,7 @@ const products = [
     },
     {
         "id": 6,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -49,7 +49,7 @@ const products = [
     },
     {
         "id": 7,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -57,7 +57,7 @@ const products = [
     },
     {
         "id": 8,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -65,7 +65,7 @@ const products = [
     },
     {
         "id": 9,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -73,7 +73,7 @@ const products = [
     },
     {
         "id": 10,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -81,7 +81,7 @@ const products = [
     },
     {
         "id": 11,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",
@@ -89,7 +89,7 @@ const products = [
     },
     {
         "id": 12,
-        "img": "static/img/product-img-1.jpg",
+        "img": "/static/img/product-img-1.jpg",
         "brand": "Alpha Hookah Kappa",
         "model": "White Cosmo",
         "price": "15 900",

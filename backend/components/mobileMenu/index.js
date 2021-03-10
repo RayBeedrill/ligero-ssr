@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-function MobileMenu() {
+function MobileMenu({menuActive}) {
     return (
-        <div className="menu">
-          <ul className="menu__langs">
+        <div className={menuActive ? "menu active" : "menu"}>
+          {/* <ul className="menu__langs">
             <li className="menu__langs-item">
               {' '}
               <a className="menu__langs-link" href="">
@@ -21,7 +21,7 @@ function MobileMenu() {
                 eng
               </a>
             </li>
-          </ul>
+          </ul> */}
           <ul className="menu__nav">
             <li className="menu__nav-item">
               {' '}
@@ -231,7 +231,7 @@ function MobileMenu() {
               </a>
             </li>
           </ul>
-          <ul className="menu__controls">
+          {/* <ul className="menu__controls">
             <li className="menu__controls-item">
               {' '}
               <a className="menu__controls-link" href="">
@@ -274,15 +274,15 @@ function MobileMenu() {
                 <div className="menu__controls-link-text">ночной режим</div>
               </a>
             </li>
-          </ul>
+          </ul> */}
           <ul className="menu__page-nav">
             <li className="menu__page-nav-item">
               {' '}
-              <Link className="menu__page-nav-link" href="/delivery">
-                <a>Доставка и оплата</a>
+              <Link href="/delivery">
+                <a className="menu__page-nav-link">Доставка и оплата</a>
               </Link>
             </li>
-            <li className="menu__page-nav-item">
+            {/* <li className="menu__page-nav-item">
               {' '}
               <a className="menu__page-nav-link" href="">
                 Блог
@@ -293,7 +293,7 @@ function MobileMenu() {
               <a className="menu__page-nav-link" href="">
                 Контакты
               </a>
-            </li>
+            </li> */}
           </ul>
           <ul className="socials">
             <li className="socials__item">

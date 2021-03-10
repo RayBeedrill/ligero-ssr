@@ -50,7 +50,8 @@ function Product({ product, forceUpdate, lsCart }) {
       </div>
       <div className="cart-list__item-price">{product.price} грн</div>
     </div>
-    <div className="cart-list__item-delete-btn" onClick={() => {
+    <div className="cart-list__item-delete-btn" onClick={(e) => {
+        e.preventDefault();
         lsCart.removeFromCart(product.id)
         forceUpdate()
       }}>
