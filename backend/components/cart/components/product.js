@@ -30,6 +30,7 @@ function Product({ product, forceUpdate, lsCart }) {
           className="cart-list__item-amount-input"
           type="number"
           value={product.quantity}
+          onChange={()=>{}}
         />
         <div className="cart-list__item-amount-btn-add" onClick={(e) => {
           e.preventDefault();
